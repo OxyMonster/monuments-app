@@ -1,15 +1,17 @@
 <template>
-    <div class="container row">
-        <div class="container__header col-12">
-            <AppHeader></AppHeader>
-        </div>
+    <div>
+        <div class="wrapper row">
+            <div class="wrapper__header col-12">
+                <AppHeader></AppHeader>
+            </div>
 
-        <div class="container__body col-12">
-            <h1>Body Here</h1>
-        </div>
+            <div class="wrapper__body col-12">
+                <h1>Body Here</h1>
+            </div>
 
-        <div class="container__footer col-12">
-            <AppFooter></AppFooter>
+            <div class="wrapper__footer col-12">
+                <AppFooter></AppFooter>
+            </div>
         </div>
     </div>
 </template>
@@ -26,14 +28,19 @@ export default {
 };
 </script>
 
-<style>
-.container {
+<style lang="scss">
+.wrapper {
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    background: #141313;
+
+    &__header {
+        background-color: #141313;
+    }
 }
 
 .title {

@@ -4,7 +4,7 @@
         <div class="footer__header col-12">
             <div class="footer__header__img col-md-2">
                 <div class="footer__header__img__container">
-                    <img src alt="img_here" />
+                    <img src="assets/img/tbc-bank.svg" alt="img_here" />
                 </div>
             </div>
         </div>
@@ -17,49 +17,49 @@
             </div>
         </div>
 
-        <div class="footer__box__right col-md-6 d-flex">
-            <div class="footer__box__right__title col-12">
-                <h4>Title</h4>
+        <div class="footer__box__right col-md-6 row">
+            <div class="footer__box__right__info__title col-12">
+                <h4>Contact</h4>
             </div>
 
             <div class="footer__box__right__info col-md-6">
                 <div class="footer__box__right__info__text w-100">
-                    <span>footer__box__right__info</span>
+                    <p>For Clients</p>
                 </div>
                 <div class="footer__box__right__info__text w-100">
                     <span>+995 599 12 32 70</span>
                 </div>
-                <div class="footer__box__right__info__text w-100">
+                <div class="footer__box__right__info__email w-100">
                     <span>client@domain.com</span>
                 </div>
             </div>
 
             <div class="footer__box__right__info col-md-6">
                 <div class="footer__box__right__info__text w-100">
-                    <span>footer__box__right__info</span>
+                    <p>For Contractors</p>
                 </div>
                 <div class="footer__box__right__info__text w-100">
                     <span>+995 599 12 32 70</span>
                 </div>
-                <div class="footer__box__right__info__text w-100">
+                <div class="footer__box__right__info__email w-100">
                     <span>client@domain.com</span>
                 </div>
             </div>
 
-            <div class="footer__box__right__info col-md-6">
+            <div class="footer__box__right__info col-md-6 mt-5">
                 <div class="footer__box__right__info__text w-100">
-                    <span>footer__box__right__info</span>
+                    <p>Office</p>
                 </div>
                 <div class="footer__box__right__info__text w-100">
-                    <span>+995 599 12 32 70</span>
+                    <span>Tbilisi, Georgia </span>
                 </div>
                 <div class="footer__box__right__info__text w-100">
-                    <span>client@domain.com</span>
+                    <span>zip code - 1200</span>
                 </div>
             </div>
         </div>
 
-        <div class="footer__bottom col-12">
+        <div class="footer__bottom col-12 row">
             <div class="footer__bottom__logos d-flex col-9">
                 <div class="footer__bottom__logos__item">
                     <img src alt="instagram" />
@@ -85,4 +85,27 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.footer {
+    &__box__right__info {
+        &__title {
+            color: #ffffff;
+            font-size: 24px;
+        }
+        &__text {
+            color: #ffffff;
+            p {
+                font-size: 20px;
+            }
+
+            span {
+                font-size: 18px;
+            }
+        }
+
+        &__email {
+            color: #c52c2c;
+        }
+    }
+}
+</style>

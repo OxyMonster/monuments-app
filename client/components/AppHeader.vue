@@ -4,16 +4,16 @@
             <h1>Logo</h1>
         </div>
 
-        <div class="header__links">
-            <div class="header__links__item">
+        <div class="header__links col-md-6 d-flex">
+            <div class="header__links__item col-md-4">
                 <nuxt-link to="/">Home</nuxt-link>
             </div>
 
-            <div class="header__links__item">
+            <div class="header__links__item col-md-4">
                 <nuxt-link to="/about-us">About us</nuxt-link>
             </div>
 
-            <div class="header__links__item">
+            <div class="header__links__item col-md-4">
                 <nuxt-link to="/gallery">Gallery</nuxt-link>
             </div>
         </div>
@@ -26,4 +26,23 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.header {
+    border-bottom: 1px solid #707070;
+
+    &__links {
+        &__item {
+            a {
+                color: #d4d4d5;
+                font-size: 18px;
+                text-decoration: none;
+
+                &:hover {
+                    color: #ffffff;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}
+</style>
