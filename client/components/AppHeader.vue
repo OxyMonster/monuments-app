@@ -6,7 +6,7 @@
 
         <div class="header__links col-md-6 d-flex">
             <div class="header__links__item col-md-4">
-                <nuxt-link to="/">Home</nuxt-link>
+                <nuxt-link to="/home">Home</nuxt-link>
             </div>
 
             <div class="header__links__item col-md-4">
@@ -29,9 +29,12 @@ export default {
 <style lang="scss">
 .header {
     border-bottom: 1px solid #707070;
+    margin-bottom: 6rem;
 
     &__links {
         &__item {
+            display: flex;
+            align-items: center;
             a {
                 color: #d4d4d5;
                 font-size: 18px;

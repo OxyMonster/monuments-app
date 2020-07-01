@@ -1,32 +1,10 @@
 <template>
-    <div>
-        <div class="wrapper row">
-            <div class="wrapper__header col-12">
-                <AppHeader></AppHeader>
-            </div>
-
-            <div class="wrapper__body col-12">
-                <h1>Body Here</h1>
-            </div>
-
-            <div class="wrapper__footer col-12">
-                <AppFooter></AppFooter>
-            </div>
-        </div>
+    <div class="wrapper row">
+        <router-view></router-view>
     </div>
 </template>
 
-<script>
-import AppHeader from "../components/AppHeader";
-import AppFooter from "../components/AppFooter";
-
-export default {
-    components: {
-        AppHeader,
-        AppFooter
-    }
-};
-</script>
+<script></script>
 
 <style lang="scss">
 .wrapper {

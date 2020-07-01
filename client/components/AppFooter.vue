@@ -1,23 +1,46 @@
 /* eslint-disable prettier/prettier */
 <template>
     <div class="footer row">
-        <div class="footer__header col-12">
-            <div class="footer__header__img col-md-2">
+        <div class="footer__header col-12 row">
+            <div class="footer__header__img col-md-1">
                 <div class="footer__header__img__container">
-                    <img src="assets/img/tbc-bank.svg" alt="img_here" />
+                    <img src="~/assets/img/tbc-bank.svg" alt="img_here" />
+                </div>
+            </div>
+            <div class="footer__header__img col-md-1">
+                <div class="footer__header__img__container">
+                    <img src="~/assets/img/tbc-bank.svg" alt="img_here" />
+                </div>
+            </div>
+            <div class="footer__header__img col-md-1">
+                <div class="footer__header__img__container">
+                    <img src="~/assets/img/tbc-bank.svg" alt="img_here" />
+                </div>
+            </div>
+            <div class="footer__header__img col-md-1">
+                <div class="footer__header__img__container">
+                    <img src="~/assets/img/tbc-bank.svg" alt="img_here" />
+                </div>
+            </div>
+            <div class="footer__header__img col-md-1">
+                <div class="footer__header__img__container">
+                    <img src="~/assets/img/tbc-bank.svg" alt="img_here" />
                 </div>
             </div>
         </div>
 
-        <div class="footer__box__left col-md-6">
+        <div class="footer__box__left col-md-7">
             <div class="footer__box__left__img">
                 <div class="footer__box__left__img__container">
-                    <img src alt="Left_Hero_Img" />
+                    <img
+                        src="~/assets/img/rita-chou-Qz8vpLWQZ6A-unsplash.svg"
+                        alt="Left_Hero_Img"
+                    />
                 </div>
             </div>
         </div>
 
-        <div class="footer__box__right col-md-6 row">
+        <div class="footer__box__right col-md-5 row">
             <div class="footer__box__right__info__title col-12">
                 <h4>Contact</h4>
             </div>
@@ -60,20 +83,22 @@
         </div>
 
         <div class="footer__bottom col-12 row">
-            <div class="footer__bottom__logos d-flex col-9">
-                <div class="footer__bottom__logos__item">
-                    <img src alt="instagram" />
+            <div class="footer__bottom__logos d-flex col-3">
+                <div class="footer__bottom__logos__item col-4">
+                    <img src="~/assets/img/Path 23.svg" alt="instagram" />
                 </div>
-                <div class="footer__bottom__logos__item">
-                    <img src alt="twitter" />
+                <div class="footer__bottom__logos__item col-4">
+                    <img src="~/assets/img/Path 21.svg" alt="twitter" />
                 </div>
-                <div class="footer__bottom__logos__item">
-                    <img src alt="facebook" />
+                <div class="footer__bottom__logos__item col-4">
+                    <img src="~/assets/img/Path 24.svg" alt="facebook" />
                 </div>
             </div>
 
-            <div class="footer__bottom__rights col-3">
-                <span>Company 2020 All Rights Reserved</span>
+            <div class="footer__bottom__right col-9 d-flex justify-content-end">
+                <div class="">
+                    <span>Company 2020 All Rights Reserved</span>
+                </div>
             </div>
         </div>
     </div>
@@ -87,6 +112,26 @@ export default {
 
 <style lang="scss">
 .footer {
+    &__header {
+        margin-bottom: 5rem;
+    }
+
+    &__box__left {
+        &__img {
+            display: flex;
+            justify-content: flex-start;
+            &__container {
+                max-width: 711px;
+                max-height: 350px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
     &__box__right__info {
         &__title {
             color: #ffffff;
@@ -105,6 +150,23 @@ export default {
 
         &__email {
             color: #c52c2c;
+        }
+    }
+
+    &__bottom {
+        margin-top: 3rem;
+        padding-bottom: 1rem;
+        &__logos {
+            &__item {
+                display: flex;
+                justify-content: flex-start;
+            }
+        }
+
+        &__right {
+            span {
+                color: #d4d4d5;
+            }
         }
     }
 }
