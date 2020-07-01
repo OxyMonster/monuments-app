@@ -1,5 +1,8 @@
 <template>
     <div class="home row">
+        <div class="home__slider col-12">
+            <AppSlider></AppSlider>
+        </div>
         <div class="home__img col-md-6">
             <div class="home__img__back">
                 <div class="home__img__back__yellow">
@@ -75,16 +78,27 @@
 </template>
 
 <script>
-export default {};
+import AppSlider from "../../components/home/AppSlider.vue";
+export default {
+    components: {
+        AppSlider
+    }
+};
 </script>
 
 <style lang="scss">
 .home {
+    align-items: center;
+    &__slider {
+        margin-bottom: 12rem;
+    }
     &__img {
         margin-bottom: 12rem;
+        display: flex;
+        justify-content: flex-start;
         &__container {
             position: absolute;
-            left: 50%;
+            left: 12%;
             top: 51px;
         }
     }

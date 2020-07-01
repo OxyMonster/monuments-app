@@ -2,6 +2,46 @@
 <template>
     <div class="footer row">
         <div class="footer__header col-12 row">
+            <div
+                class="footer__header__title col-12 d-flex justify-content-start mb-4"
+            >
+                <h4>Partner companies</h4>
+            </div>
+            <div class="footer__header__img col-md-1">
+                <div class="footer__header__img__container">
+                    <img src="~/assets/img/tbc-bank.svg" alt="img_here" />
+                </div>
+            </div>
+            <div class="footer__header__img col-md-1">
+                <div class="footer__header__img__container">
+                    <img src="~/assets/img/tbc-bank.svg" alt="img_here" />
+                </div>
+            </div>
+            <div class="footer__header__img col-md-1">
+                <div class="footer__header__img__container">
+                    <img src="~/assets/img/tbc-bank.svg" alt="img_here" />
+                </div>
+            </div>
+            <div class="footer__header__img col-md-1">
+                <div class="footer__header__img__container">
+                    <img src="~/assets/img/tbc-bank.svg" alt="img_here" />
+                </div>
+            </div>
+            <div class="footer__header__img col-md-1">
+                <div class="footer__header__img__container">
+                    <img src="~/assets/img/tbc-bank.svg" alt="img_here" />
+                </div>
+            </div>
+            <div class="footer__header__img col-md-1">
+                <div class="footer__header__img__container">
+                    <img src="~/assets/img/tbc-bank.svg" alt="img_here" />
+                </div>
+            </div>
+            <div class="footer__header__img col-md-1">
+                <div class="footer__header__img__container">
+                    <img src="~/assets/img/tbc-bank.svg" alt="img_here" />
+                </div>
+            </div>
             <div class="footer__header__img col-md-1">
                 <div class="footer__header__img__container">
                     <img src="~/assets/img/tbc-bank.svg" alt="img_here" />
@@ -114,6 +154,21 @@ export default {
 .footer {
     &__header {
         margin-bottom: 5rem;
+
+        &__title {
+            h4 {
+                font-size: 20px;
+                color: #ffffff;
+            }
+        }
+
+        &__img {
+            &__container {
+                img {
+                    filter: grayscale(70%);
+                }
+            }
+        }
     }
 
     &__box__left {

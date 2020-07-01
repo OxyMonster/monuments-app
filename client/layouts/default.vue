@@ -6,11 +6,11 @@
                     <AppHeader></AppHeader>
                 </div>
 
-                <div class="wrapper__body col-12 px-5">
+                <div class="wrapper__body col-12">
                     <Nuxt />
                 </div>
 
-                <div class="wrapper__footer col-12 px-5">
+                <div class="wrapper__footer col-12">
                     <AppFooter></AppFooter>
                 </div>
             </div>
@@ -60,6 +60,14 @@ html {
 
     &__header {
         background-color: #141313;
+    }
+
+    &__body {
+        padding: 0 7rem;
+    }
+
+    &__footer {
+        padding: 0 7rem;
     }
 }
 
