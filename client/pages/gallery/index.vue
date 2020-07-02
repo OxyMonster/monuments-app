@@ -21,10 +21,16 @@ export default {};
         &__container {
             width: 213.8px;
             height: 315.54px;
+            overflow: hidden; /* [1.2] Hide the overflowing of child elements */
 
             img {
                 width: 100%;
                 height: 100%;
+                transition: transform 0.5s ease;
+
+                &:hover {
+                    transform: scale(1.5);
+                }
             }
         }
     }

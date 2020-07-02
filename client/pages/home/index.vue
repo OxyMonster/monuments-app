@@ -70,7 +70,7 @@
             </div>
         </div>
         <div class="home__left__img col-md-6">
-            <div class="home__left__img__container">
+            <div class="home__left__img__container d-flex justify-content-end">
                 <img src="~/assets/img/Group 4.svg" alt="monument__img" />
             </div>
         </div>
@@ -90,7 +90,7 @@ export default {
 .home {
     align-items: center;
     &__slider {
-        margin-bottom: 12rem;
+        margin-bottom: 7rem;
     }
     &__img {
         margin-bottom: 12rem;
@@ -112,6 +112,7 @@ export default {
         }
 
         &__text {
+            text-align: start;
             p {
                 font-size: 1rem;
                 color: #eeeeee;
@@ -134,6 +135,8 @@ export default {
                 p {
                     font-size: 1rem;
                     color: #bf9e32;
+                    cursor: pointer;
+                    user-select: none;
                 }
             }
         }

@@ -215,6 +215,10 @@ export default {
             &__item {
                 display: flex;
                 justify-content: flex-start;
+
+                img {
+                    cursor: pointer;
+                }
             }
         }
 

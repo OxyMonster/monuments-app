@@ -1,10 +1,17 @@
 <template>
     <div class="wrapper row">
         <router-view></router-view>
+        <AppLoading></AppLoading>
     </div>
 </template>
 
-<script></script>
+<script>
+import AppLoading from "../components/loading/AppLoading.vue";
+
+export default {
+    components: { AppLoading }
+};
+</script>
 
 <style lang="scss">
 .wrapper {

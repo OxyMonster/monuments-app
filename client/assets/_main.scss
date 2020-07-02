@@ -1,0 +1,30 @@
+//  * * * COlors * * * *
+
+$light-black: #141313;
+
+$dark-black: #141313;
+
+$yellow: #bf9e32;
+
+$white: #ffffff;
+
+$white__dark: #d4d4d5;
+
+$red: #c52c2c;
+
+// * * * * ANimations * * * *
+.page-enter-active,
+.page-leave-active {
+    transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-active {
+    opacity: 0;
+}
+
+// .bounce-enter-active {
+//     animation: bounce-in 0.8s;
+// }
+// .bounce-leave-active {
+//     animation: bounce-out 0.5s;
+// }
