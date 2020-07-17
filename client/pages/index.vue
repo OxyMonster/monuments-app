@@ -24,7 +24,7 @@ export default {
     background: #141313;
 
     &__header {
-        background-color: #141313;
+        background-color: #ffffff;
     }
 }
 

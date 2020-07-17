@@ -27,31 +27,30 @@
         </div>
         <div class="home__text col-md-6">
             <div class="home__text__title">
-                <h4>Title</h4>
+                <h4>განხორციელებული პროექტები</h4>
             </div>
-            <div class="home__text__text">
-                <p>
-                    Enter each item on a new line, choose the amount of groups
+            <div class="home__text__tex mt-4">
+                <p style="text-align: left;">
+                    enter each item on a new line, choose the amount of groups
                     unders settings, and click the button to generate your
                     randomized list. Don't like the first team? Just click again
                     until you do.groups unders settings, and click the button to
-                    generate your randomized listfirst team? Just click again
-                    until you do.Enter each item on a new line, choose the
-                    amount of groups unders settings, an
+                    generate your randomized list. don't like the first team?
+                    Just click again until you do.
                 </p>
             </div>
             <div class="home__text__more d-flex">
                 <div class="line"></div>
                 <div class="home__text__more__text">
-                    <p>More info</p>
+                    <nuxt-link to="/our-works">ვრცლად</nuxt-link>
                 </div>
             </div>
         </div>
         <div class="home__text col-md-6">
             <div class="home__text__title">
-                <h4>Title</h4>
+                <h4>პუბლიკაციები</h4>
             </div>
-            <div class="home__text__text">
+            <div class="home__text__text mt-4">
                 <p>
                     Enter each item on a new line, choose the amount of groups
                     unders settings, and click the button to generate your
@@ -65,7 +64,7 @@
             <div class="home__text__more d-flex">
                 <div class="line"></div>
                 <div class="home__text__more__text">
-                    <p>More info</p>
+                    <nuxt-link to="/publications">ვრცლად</nuxt-link>
                 </div>
             </div>
         </div>
@@ -90,10 +89,10 @@ export default {
 .home {
     align-items: center;
     &__slider {
-        margin-bottom: 7rem;
+        margin-bottom: 4rem;
     }
     &__img {
-        margin-bottom: 12rem;
+        margin-bottom: 4rem;
         display: flex;
         justify-content: flex-start;
         &__container {
@@ -107,22 +106,24 @@ export default {
         &__title {
             h4 {
                 font-size: 31px;
-                color: #eeeeee;
+                color: #413f3f;
             }
         }
 
         &__text {
             text-align: start;
             p {
-                font-size: 1rem;
-                color: #eeeeee;
+                font-size: 16px;
+                color: #313131;
+                text-align: left;
             }
         }
 
         &__more {
-            display: flex;
+            display: flex !important;
             // justify-content: center;
-            align-items: center;
+            align-items: baseline;
+            margin-top: 35px;
             .line {
                 width: 42px;
                 background-color: #bf9e32;
@@ -130,13 +131,15 @@ export default {
                 margin-bottom: 1rem;
             }
             &__text {
-                margin-left: 2rem;
+                margin-left: 16px;
 
-                p {
+                a {
                     font-size: 1rem;
                     color: #bf9e32;
                     cursor: pointer;
                     user-select: none;
+                    // text-align: left;
+                    text-decoration: none;
                 }
             }
         }

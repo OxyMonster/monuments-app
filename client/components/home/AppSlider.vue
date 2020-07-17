@@ -8,7 +8,7 @@
         </div>
         <div class="slider__text col-md-6 row align-items-center">
             <div class="slider__text__title col-12">
-                <h4>Recently added</h4>
+                <h4>ბოლოს დამატებულები</h4>
             </div>
             <div class="slider__text__text col-12">
                 <p>
@@ -41,8 +41,7 @@
             <div class="slider__img__box col-4">
                 <div class="slider__img__box__container">
                     <img
-                        src="~/assets/img/Component 2 – 3.svg"
-                        alt="hero__img"
+                        src="~/assets/img/jack-hamilton-AUgTvvQxDhg-unsplash.svg"
                     />
                 </div>
             </div>
@@ -54,7 +53,7 @@
             </div>
             <div class="slider__arrow__img">
                 <div class="slider__arrow__img__container">
-                    <img src="~/assets/img/Path 2.svg" alt="" />
+                    <img src="~/assets/img/Path 2.svg" alt />
                 </div>
             </div>
         </div>
@@ -83,14 +82,15 @@ export default {
     &__text {
         &__title {
             h4 {
-                color: #ffffff;
+                color: #413f3f;
                 font-size: 36px;
             }
         }
 
         &__text {
             p {
-                color: #ffffff;
+                color: #313131;
+                text-align: left;
             }
         }
     }
@@ -99,7 +99,7 @@ export default {
         &__length {
             p {
                 font-size: 24px;
-                color: #ffffff;
+                color: #000000;
             }
         }
     }

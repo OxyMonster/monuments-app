@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <div class="wrapper row">
+            <div class="wrapper row p-0">
                 <div class="wrapper__header col-12">
                     <AppHeader></AppHeader>
                 </div>
@@ -56,18 +56,22 @@ html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: #141313;
+    background: #eaedf2;
 
     &__header {
-        background-color: #141313;
+        background-color: #eaedf2;
+        position: absolute;
+        top: 0;
     }
 
     &__body {
-        padding: 0 7rem;
+        padding: 0 112px 150px;
+        margin-top: 120px;
     }
 
     &__footer {
-        padding: 0 7rem;
+        padding: 0 112px;
+        background-color: #141313;
     }
 }
 
