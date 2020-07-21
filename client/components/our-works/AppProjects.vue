@@ -1,0 +1,132 @@
+<template>
+    <div class="row slider">
+        <div class="works__cat__header col-12">
+            <div class="works__cat__header__title">
+                <h4>პროექტები</h4>
+            </div>
+            <div class="works__cat__header__arrows">
+                <div class="left" @click="prev">
+                    <img src="~/assets/img/left.svg" alt="left" />
+                </div>
+                <div class="right" @click="next">
+                    <img src="~/assets/img/right.svg" alt="right" />
+                </div>
+            </div>
+        </div>
+        <div
+            v-for="(item, index) in sliderList"
+            :key="index"
+            class="slider__img col-md-3"
+        >
+            <div
+                class="slider__img__container"
+                @click="routeToDetails(item._id)"
+            >
+                <img
+                    :src="'http://localhost:8081/' + item.file[0].path"
+                    alt="slider_img"
+                />
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: "AppProjects",
+
+    data() {
+        return {
+            projectsList: [],
+            sliderList: [],
+            sliderCounterIndex: 0
+        };
+    },
+    created: function () {
+        this.getProjects();
+    },
+    methods: {
+        getProjects() {
+            return this.$axios
+                .get("http://localhost:8081/api/get-projects")
+                .then((data) => {
+                    this.projectsList = data["data"]["data"];
+                    if (this.projectsList.length > 3) {
+                        this.sliderList = [
+                            this.projectsList[0],
+                            this.projectsList[1],
+                            this.projectsList[2],
+                            this.projectsList[3]
+                        ];
+                    }
+                    console.log(this.projectsList);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
+        routeToDetails(id) {
+            return this.$router.push("/our-works/projects$" + id);
+        },
+        next() {
+            if (this.sliderCounterIndex < 0) {
+                this.sliderCounterIndex = 0;
+            }
+            if (this.projectsList.length - 1 > this.sliderCounterIndex) {
+                this.sliderCounterIndex++;
+                console.log(this.sliderCounterIndex);
+                this.sliderList.splice(0, 1);
+                this.sliderList.push(
+                    this.projectsList[this.sliderCounterIndex]
+                );
+            } else {
+                console.log("not enought length");
+            }
+        },
+        prev() {
+            if (this.sliderCounterIndex > 0) {
+                this.sliderCounterIndex--;
+                console.log(this.sliderCounterIndex);
+                this.sliderList.splice(this.sliderList.length - 1, 1);
+                this.sliderList.unshift(
+                    this.projectsList[this.sliderCounterIndex]
+                );
+            } else {
+                console.log("not enought length");
+            }
+        }
+    }
+};
+</script>
+
+<style lang="scss">
+.slider {
+    &__title {
+        h4 {
+            font-size: 20px;
+            color: #000000;
+        }
+    }
+
+    &__img {
+        display: flex;
+        justify-content: center;
+
+        &__container {
+            width: 206.2px;
+            height: 317px;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+                object-fit: cover;
+            }
+        }
+    }
+}
+.works__cat__header {
+    padding-bottom: 25px;
+}
+</style>

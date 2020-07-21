@@ -21,8 +21,22 @@
                             block
                             variant="info"
                             class="w-auto"
-                            >Accordion 1</b-button
                         >
+                            <div class="">
+                                <img
+                                    v-if="!isAboutActive"
+                                    src="~/assets/img/minus.svg"
+                                    alt=""
+                                    @click="toggle('about-us')"
+                                />
+                                <img
+                                    v-if="isAboutActive"
+                                    src="~/assets/img/plus.svg"
+                                    alt=""
+                                    @click="toggle('about-us')"
+                                />
+                            </div>
+                        </b-button>
                     </b-card-header>
                     <b-collapse
                         id="accordion-1"
@@ -54,8 +68,19 @@
                             block
                             variant="info"
                             class="w-auto"
-                            >Accordion 1</b-button
+                            @click="toggle('structure')"
                         >
+                            <img
+                                v-if="isDebulebaActive"
+                                src="~/assets/img/minus.svg"
+                                alt=""
+                            />
+                            <img
+                                v-if="!isDebulebaActive"
+                                src="~/assets/img/plus.svg"
+                                alt=""
+                            />
+                        </b-button>
                     </b-card-header>
                     <b-collapse
                         id="accordion-2"
@@ -91,8 +116,19 @@
                             block
                             variant="info"
                             class="w-auto"
-                            >Accordion 1</b-button
+                            @click="toggle('debuleba')"
                         >
+                            <img
+                                v-if="isDebulebaActive"
+                                src="~/assets/img/minus.svg"
+                                alt=""
+                            />
+                            <img
+                                v-if="!isDebulebaActive"
+                                src="~/assets/img/plus.svg"
+                                alt=""
+                            />
+                        </b-button>
                     </b-card-header>
                     <b-collapse
                         id="accordion-3"
@@ -128,8 +164,19 @@
                             block
                             variant="info"
                             class="w-auto"
-                            >Accordion 1</b-button
+                            @click="toggle('team')"
                         >
+                            <img
+                                v-if="isTeamActive"
+                                src="~/assets/img/minus.svg"
+                                alt=""
+                            />
+                            <img
+                                v-if="!isTeamActive"
+                                src="~/assets/img/plus.svg"
+                                alt=""
+                            />
+                        </b-button>
                     </b-card-header>
                     <b-collapse
                         id="accordion-4"
@@ -165,20 +212,48 @@ export default {
             და ორგანიზაციებთან, სამოქალაქო საზოგადოებასთან.ICOMOS–ი, ძეგლებისა და ღირსშესანიშნავი ადგილების საერთაშორისო საბჭო, არის 
             გლობალური არასამთავრობო ორგანიზაცია, რომელიც ასოცირებულია UNESCO-სთან. მისი მიზანია ხელი შეუწყოს ძეგლების, შენობათა 
             კომპლექსების და ღირსშესანიშნავი ადგილების კონსერვაციას, დაცვას, გამოყენებას და განვითარებას.  ორგანიზაცია მონაწილეობს დარგის დოქტრინების განვითარებაში, მუშაობს იდეების ევოლუციასა და გავრცელებაზე და წარმართავს ადვოკატირებას. ICOMOS-ი წარმოადგენს მსოფლიო მემკვიდრეობის კომიტეტის მრჩეველ ორგანიზაციას UNESCO-ს მსოფლიო მემკვიდრეობის კონვენციის შესრულებისთვის. ICOMOS-ი ამჟამად აერთიანებს 110 ეროვნულ კომიტეტს და 28 საერთაშორისო სამეცნიერო კომიტეტს.
-        `
+        `,
+            isAboutActive: false,
+            isStructureActive: false,
+            isDebulebaActive: false,
+            isTeamActive: false
         };
+    },
+    methods: {
+        toggle(type) {
+            switch (type) {
+                case "about-us":
+                    this.isAboutActive = !this.isAboutActive;
+                    console.log(this.isAboutActive);
+                    console.log("hereee");
+                    break;
+
+                case "structure":
+                    this.isAboutActive = !this.isAboutActive;
+                    break;
+                case "debuleba":
+                    this.isDebulebaActive = !this.isDebulebaActive;
+            }
+        }
     }
 };
 </script>
 
 <style lang="scss" scoped>
 .about-us {
-    height: 100vh;
+    // height: 100vh;
     background: #ffffff;
     border-radius: 8px;
     padding: 50px;
     &__container {
         text-align: left;
+        button {
+            background: transparent !important;
+            border: none;
+            outline: none;
+            box-shadow: none !important;
+            height: 8px !important;
+        }
     }
 }
 </style>

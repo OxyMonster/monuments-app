@@ -1,5 +1,5 @@
 <template>
-    <div class="header row">
+    <div class="header row p-2">
         <div class="header__logo col-lg-5">
             <h1>Logo</h1>
         </div>
@@ -59,5 +59,8 @@ export default {
             }
         }
     }
+}
+.nuxt-link-active {
+    color: #1d1d1d !important;
 }
 </style>

@@ -17,7 +17,7 @@ let storage = multer.diskStorage({
 let upload  = multer({storage: storage});     
 
 
-router.post('/api/get-0pilot-programs', upload.single('file'), (req, res) => {
+router.post('/api/post-pilot-programs', upload.single('file'), (req, res) => {
 
     const pilotPrograms = new pilotProgramsModel({
         title: req.body.title,

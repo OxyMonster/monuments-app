@@ -30,9 +30,15 @@ export default {
 };
 </script>
 <style lang="scss">
+@import url("//cdn.web-fonts.ge/fonts/bpg-mrgvlovani/css/bpg-mrgvlovani.min.css");
+
 html {
-    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    // font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    //     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    // font-family: "BPG Mrgvlovani", sans-serif;
+
+    font-family: "BPG Mrgvlovani Caps", sans-serif !important;
+
     font-size: 16px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
@@ -57,6 +63,7 @@ html {
     align-items: center;
     text-align: center;
     background: #eaedf2;
+    font-family: "BPG Mrgvlovani Caps", sans-serif !important;
 
     &__header {
         background-color: #eaedf2;

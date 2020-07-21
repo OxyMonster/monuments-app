@@ -1,7 +1,7 @@
 <template>
     <div class="text-center">
         <div>
-            <b-spinner type="grow" label="Loading..."></b-spinner>
+            <b-spinner label="Spinning"></b-spinner>
         </div>
     </div>
 </template>

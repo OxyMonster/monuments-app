@@ -1,15 +1,15 @@
 <template>
     <div class="wrapper row">
         <router-view></router-view>
-        <AppLoading></AppLoading>
+        <AppHome></AppHome>
     </div>
 </template>
 
 <script>
-import AppLoading from "../components/loading/AppLoading.vue";
+import AppHome from "../pages/home/index";
 
 export default {
-    components: { AppLoading }
+    components: { AppHome }
 };
 </script>
 
@@ -21,7 +21,7 @@ export default {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: #141313;
+    // background: #141313;
 
     &__header {
         background-color: #ffffff;

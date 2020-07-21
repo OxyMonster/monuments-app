@@ -1,16 +1,16 @@
 <template>
-    <div class="slider row">
+    <div class="slider row align-items-center">
         <div class="slider__eclipse__one">
             <img src="~/assets/img/Ellipse 1.svg" alt="hero__img" />
         </div>
         <div class="slider__eclipse__two">
             <img src="~/assets/img/Ellipse 2.svg" alt="hero__img" />
         </div>
-        <div class="slider__text col-md-6 row align-items-center">
+        <div class="slider__text col-md-6">
             <div class="slider__text__title col-12">
-                <h4>ბოლოს დამატებულები</h4>
+                <h4>პროექტები</h4>
             </div>
-            <div class="slider__text__text col-12">
+            <div class="slider__text__text col-12 mt-4">
                 <p>
                     Enter each item on a new line, choose the amount of groups
                     unders settings, and click the button to generate your
@@ -20,41 +20,37 @@
                     Just click again until you do.
                 </p>
             </div>
+            <div class="slider__more col-12">
+                <div class="slider__more__line"></div>
+                <nuxt-link to="/our-works">დეტალურად</nuxt-link>
+            </div>
         </div>
-        <div class="slider__img row col-md-6 justify-content-between">
-            <div class="slider__img__box col-4">
+        <div class="slider__img row col-md-6 justify-content-between p-0">
+            <div
+                v-for="(item, index) in sliderList"
+                :key="index"
+                class="slider__img__box col-4"
+            >
                 <div class="slider__img__box__container">
                     <img
-                        src="~/assets/img/Component 2 – 3.svg"
-                        alt="hero__img"
-                    />
-                </div>
-            </div>
-            <div class="slider__img__box col-4">
-                <div class="slider__img__box__container">
-                    <img
-                        src="~/assets/img/Component 2 – 3.svg"
-                        alt="hero__img"
-                    />
-                </div>
-            </div>
-            <div class="slider__img__box col-4">
-                <div class="slider__img__box__container">
-                    <img
-                        src="~/assets/img/jack-hamilton-AUgTvvQxDhg-unsplash.svg"
+                        :src="'http://localhost:8081/' + item.file[0].path"
+                        alt="slider_img"
                     />
                 </div>
             </div>
         </div>
 
-        <div class="slider__arrow col-12 d-flex justify-content-end mt-5">
-            <div class="slider__arrow__length mr-3">
-                <p>1/08</p>
+        <div
+            class="slider__arrow col-12 d-flex align-items-center justify-content-end mt-5"
+        >
+            <div
+                v-if="projectsList.length > 0"
+                class="slider__arrow__length mr-3"
+            >
+                <p>{{ `${sliderCounterIndex}/${projectsList.length - 1}` }}</p>
             </div>
             <div class="slider__arrow__img">
-                <div class="slider__arrow__img__container">
-                    <img src="~/assets/img/Path 2.svg" alt />
-                </div>
+                <div class="line" style="cursor: pointer;" @click="next"></div>
             </div>
         </div>
     </div>
@@ -62,7 +58,64 @@
 
 <script>
 export default {
-    name: "AppSlider"
+    name: "AppSlider",
+    data() {
+        return {
+            sliderList: [],
+            projectsList: [],
+            sliderCounterIndex: 0
+        };
+    },
+    created: function () {
+        this.getProjects();
+    },
+    methods: {
+        getProjects() {
+            return this.$axios
+                .get("http://localhost:8081/api/get-projects")
+                .then((data) => {
+                    this.projectsList = data["data"]["data"];
+                    if (this.projectsList.length > 3) {
+                        this.sliderList = [
+                            this.projectsList[0],
+                            this.projectsList[1],
+                            this.projectsList[2]
+                        ];
+                    }
+                    console.log(this.projectsList);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
+        next() {
+            if (this.sliderCounterIndex < 0) {
+                this.sliderCounterIndex = 0;
+            }
+            if (this.projectsList.length - 1 > this.sliderCounterIndex) {
+                this.sliderCounterIndex++;
+                console.log(this.sliderCounterIndex);
+                this.sliderList.splice(0, 1);
+                this.sliderList.push(
+                    this.projectsList[this.sliderCounterIndex]
+                );
+            } else {
+                console.log("not enought length");
+            }
+        },
+        prev() {
+            if (this.sliderCounterIndex > 0) {
+                this.sliderCounterIndex--;
+                console.log(this.sliderCounterIndex);
+                this.sliderList.splice(this.sliderList.length - 1, 1);
+                this.sliderList.unshift(
+                    this.projectsList[this.sliderCounterIndex]
+                );
+            } else {
+                console.log("not enought length");
+            }
+        }
+    }
 };
 </script>
 
@@ -91,7 +144,39 @@ export default {
             p {
                 color: #313131;
                 text-align: left;
+                line-height: 24px;
             }
+        }
+    }
+
+    &__img {
+        &__box {
+            &__container {
+                width: 100%;
+                height: 456px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    &__more {
+        display: flex;
+        align-items: baseline;
+        &__line {
+            width: 42px;
+            background-color: #bf9e32;
+            height: 2px;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            margin-left: 15px;
+            color: #bf9e32;
+            text-decoration: none;
         }
     }
 
@@ -102,6 +187,13 @@ export default {
                 color: #000000;
             }
         }
+    }
+
+    .line {
+        width: 42px;
+        background-color: #000000;
+        height: 2px;
+        margin-bottom: 1rem;
     }
 }
 </style>

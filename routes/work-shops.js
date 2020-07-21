@@ -18,7 +18,7 @@ let storage = multer.diskStorage({
 let upload  = multer({storage: storage}); 
 
 // * * * Post Data * * * 
-router.post('/api/work-shops', upload.single('file'), (req, res) => {
+router.post('/api/post-work-shops', upload.single('file'), (req, res) => {
 
     const workShops = new workShopsModel({
         title: req.body.title, 

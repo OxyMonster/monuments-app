@@ -79,6 +79,7 @@
 <script>
 import AppSlider from "../../components/home/AppSlider.vue";
 export default {
+    name: "AppHome",
     components: {
         AppSlider
     }
@@ -121,7 +122,6 @@ export default {
 
         &__more {
             display: flex !important;
-            // justify-content: center;
             align-items: baseline;
             margin-top: 35px;
             .line {
