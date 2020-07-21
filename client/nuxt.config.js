@@ -36,7 +36,7 @@ export default {
       },
       {
         rel: "stylesheet",
-        href: "/node_modules/bpg-mrgvlovani-caps/css/bpg-mrgvlovani-caps.min.css"
+        href: "//cdn.web-fonts.ge/fonts/bpg-mrgvlovani-caps/css/bpg-mrgvlovani-caps.min.css"
       }
     ]
   },
@@ -79,25 +79,34 @@ export default {
   axios: {
     baseURL: 'http://localhost:8081/api'
   },
-
   auth: {
+    // Doc: https://auth.nuxtjs.org/getting-started/options
+
+    watchLoggedIn: true,
+    rewriteRedirects: true,
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/login', method: 'post', propertyName: 'auth_token' },
+          login: {
+            url: "/login",
+            method: "post",
+            propertyName: "auth_token"
+          },
           logout: false,
-          user: { url: '/user', method: 'get', propertyName: 'auth_token' }
+          user: {
+            url: "/user",
+            method: "get",
+            propertyName: false
+          }
         },
-        // tokenRequired: true,
-        tokenType: '',
-      },
-    },
-    redirect: {
-      home: false,
-      callback: false,
-      logout: false
+        tokenRequired: true,
+        tokenType: "",
+
+      }
     }
   },
+
+
 
 
 };

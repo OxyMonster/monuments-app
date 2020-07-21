@@ -224,8 +224,6 @@ export default {
             switch (type) {
                 case "about-us":
                     this.isAboutActive = !this.isAboutActive;
-                    console.log(this.isAboutActive);
-                    console.log("hereee");
                     break;
 
                 case "structure":

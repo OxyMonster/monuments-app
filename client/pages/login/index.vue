@@ -10,7 +10,7 @@
         <div class="wrapper fadeInDown">
             <div id="formContent">
                 <!-- Tabs Titles -->
-                <h2 class="active">Sign In</h2>
+                <h2 class="active">ავტორიზაცი</h2>
                 <!-- Icon -->
                 <div class="fadeIn first py-4">
                     <img
@@ -29,7 +29,7 @@
                         type="text"
                         class="fadeIn second"
                         name="login"
-                        placeholder="login"
+                        placeholder="სახელი"
                     />
                     <input
                         id="password"
@@ -37,22 +37,20 @@
                         type="password"
                         class="fadeIn third"
                         name="login"
-                        placeholder="password"
+                        placeholder="პაროლი"
                     />
+                    <div class="py-3">
+                        <p v-if="isErr">არასწორი მონაცემები ;(</p>
+                    </div>
                     <div class="py-5">
                         <input
                             type="button"
                             class="fadeIn fourth"
-                            value="Log In"
+                            value="ავტორიზაცია"
                             @click="onSubmit()"
                         />
                     </div>
                 </form>
-
-                <!-- Remind Passowrd -->
-                <!-- <div id="formFooter">
-                    <a class="underlineHover" href="#">Forgot Password?</a>
-                </div> -->
             </div>
         </div>
     </div>
@@ -64,17 +62,29 @@ export default {
         return {
             userName: "",
             password: "",
-            apiURL: "http://localhost:8081/api/login"
+            apiURL: "http://localhost:8081/api/login",
+            isErr: false
         };
     },
     methods: {
-        async onSubmit() {
-            this.$auth.loginWith("local", {
-                data: {
-                    userName: this.userName,
-                    password: this.password
-                }
-            });
+        onSubmit() {
+            if (this.userName && this.password) {
+                this.$auth
+                    .loginWith("local", {
+                        data: {
+                            userName: this.userName,
+                            password: this.password
+                        }
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                        this.isErr - true;
+                    })
+                    .finally((data) => {
+                        console.log(data);
+                        // console.log("Final");
+                    });
+            }
         }
     }
 };

@@ -35,7 +35,6 @@ export default {
 
                 if (this.loadingValue > 110) {
                     clearInterval(interval); // If exceeded 100, clear interval
-                    console.log(this.loadingValue);
                     this.$router.push("/home");
                 }
             }, 50);

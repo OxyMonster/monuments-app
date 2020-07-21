@@ -64,7 +64,11 @@ html {
     text-align: center;
     background: #eaedf2;
     font-family: "BPG Mrgvlovani Caps", sans-serif !important;
-
+    &__admin {
+        position: absolute;
+        top: 30px;
+        z-index: 4;
+    }
     &__header {
         background-color: #eaedf2;
         position: absolute;

@@ -33,7 +33,7 @@
         <div class="add__box col-lg-6 mt-4">
             <div class="add__box__container">
                 <div class="add__box__container__title">
-                    <h4>დამთავრებული პროექტების დამატება</h4>
+                    <h4>განხორციელებული პროექტების დამატება</h4>
                 </div>
                 <b-button id="show-btn" @click="showModal('realized-projects')"
                     >დამატება</b-button
@@ -146,7 +146,7 @@ export default {
                     this.modalTitle = "პროექტების დამატება";
                     break;
                 case "realized-projects":
-                    this.modalTitle = "დამთავრებული პროექტების დამატება";
+                    this.modalTitle = "განხორციელებული პროექტების დამატება";
                     break;
                 case "publications":
                     this.modalTitle = "პუბლიკაციების დამატება";
@@ -159,8 +159,6 @@ export default {
         },
         onFileSelected(event) {
             this.selectedFile = event.target.files[0];
-            console.log("hello file");
-            console.log(this.selectedFile);
         },
         onSubmit() {
             // * * * Validate form * * *
@@ -176,7 +174,6 @@ export default {
             }
             // * * * Post Data * * * *
             if (this.isFormValid) {
-                console.log(this.title, this.description, this.selectedFile);
                 const fd = new FormData();
                 fd.append("image", this.selectedFile, this.selectedFile.name);
                 fd.append("title", this.title);
@@ -186,8 +183,7 @@ export default {
                     case "pilot-programs":
                         this.$axios
                             .post(`${this.apiURL}/api/post-pilot-programs`, fd)
-                            .then((data) => {
-                                console.log(data);
+                            .then(() => {
                                 // * * Clear * *
                                 this.title = "";
                                 this.description = "";
@@ -201,8 +197,7 @@ export default {
                     case "projects":
                         this.$axios
                             .post(`${this.apiURL}/api/post-projects`, fd)
-                            .then((data) => {
-                                console.log(data);
+                            .then(() => {
                                 // * * Clear * *
                                 this.title = "";
                                 this.description = "";
@@ -215,8 +210,7 @@ export default {
                     case "publications":
                         this.$axios
                             .post(`${this.apiURL}/api/post-publications`, fd)
-                            .then((data) => {
-                                console.log(data);
+                            .then(() => {
                                 // * * Clear * *
                                 this.title = "";
                                 this.description = "";

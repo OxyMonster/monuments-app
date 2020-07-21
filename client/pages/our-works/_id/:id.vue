@@ -1,14 +1,17 @@
 <template>
     <div class="details">
+        <div class="details__title">
+            <h4>{{ selectedPostURL[2] }}</h4>
+        </div>
         <div
             v-for="item in allDataList"
             :key="item._id"
-            class="details__container col-12 row"
+            class="details__container col-12 mt-4"
         >
             <div class="details__container__title col-12 pb-4">
                 <h4>{{ item.title }}</h4>
             </div>
-            <div class="details__container__img col-lg-5">
+            <div class="details__container__img col-lg-5 pl-0">
                 <div class="details__container__img__container">
                     <img
                         :src="'http://localhost:8081/' + item.file[0].path"
@@ -16,9 +19,9 @@
                     />
                 </div>
             </div>
-            <div class="details__container__text col-lg-7">
-                <p>{{ item.description }}</p>
-            </div>
+            <!-- <div class="details__container__text col-lg-7"> -->
+            <p>{{ item.description }}</p>
+            <!-- </div> -->
         </div>
     </div>
 </template>
@@ -27,27 +30,24 @@
 export default {
     data() {
         return {
-            selectedPostID: "",
+            selectedPostURL: "",
             getApiURL: "http://localhost:8081/api/",
             allDataList: []
         };
     },
     created: function () {
         this.getDetailedPost();
+        console.log(this.$route);
     },
     methods: {
         getDetailedPost() {
-            console.log(this.$route.params);
-            this.selectedPostID = this.$route.params.id;
+            this.selectedPostURL = this.$route.path.split("/");
             return this.$axios
                 .get(
-                    `${this.getApiURL}${this.selectedPostID.split("$")[0]}/${
-                        this.selectedPostID.split("$")[1]
-                    }`
+                    `${this.getApiURL}${this.selectedPostURL[2]}/${this.selectedPostURL[3]}`
                 )
                 .then((data) => {
                     this.allDataList = [data["data"]["data"]];
-                    console.log(this.allDataList);
                 })
                 .catch((err) => {
                     console.log(err);
@@ -59,12 +59,17 @@ export default {
 
 <style lang="scss">
 .details {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px;
+    padding: 30px;
+    &__title {
+        h4 {
+            text-align: left;
+            font-size: 20px;
+        }
+    }
     &__container {
-        background: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px;
-        padding: 30px;
-
         &__title {
             h4 {
                 color: #000000;
@@ -77,6 +82,7 @@ export default {
 
             &__container {
                 height: 346px;
+                line-height: 24px;
 
                 img {
                     width: 100%;
@@ -86,13 +92,13 @@ export default {
             }
         }
 
-        &__text {
-            p {
-                color: #808080;
-                font-size: 16px;
-                text-align: left;
-            }
+        // &__text {
+        p {
+            color: #808080;
+            font-size: 16px;
+            text-align: left;
         }
+        // }
     }
 }
 </style>

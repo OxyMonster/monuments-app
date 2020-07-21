@@ -42,7 +42,9 @@
             <div class="home__text__more d-flex">
                 <div class="line"></div>
                 <div class="home__text__more__text">
-                    <nuxt-link to="/our-works">ვრცლად</nuxt-link>
+                    <nuxt-link to="/our-works/realized-projects"
+                        >ვრცლად</nuxt-link
+                    >
                 </div>
             </div>
         </div>

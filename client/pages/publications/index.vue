@@ -46,7 +46,6 @@ export default {
             return this.$axios
                 .get(this.apiUrl)
                 .then((data) => {
-                    console.log(data.data);
                     this.publicationsList = data["data"];
                 })
                 .catch((err) => {
@@ -61,6 +60,7 @@ export default {
 .pub {
     border-radius: 8px;
     background-color: white;
+    box-shadow: 0 3px 4px #c4c4c4;
 
     &__title {
         h4 {

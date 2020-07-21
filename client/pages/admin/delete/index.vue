@@ -6,7 +6,7 @@
                     <h4>საპილოტო პროექტების წაშლა</h4>
                 </div>
                 <b-button>
-                    <nuxt-link to="/admin-page/delete/pilot-programs"
+                    <nuxt-link to="/admin/delete/pilot-programs"
                         >არჩევა</nuxt-link
                     >
                 </b-button>
@@ -18,9 +18,7 @@
                     <h4>პროექტების წაშლა</h4>
                 </div>
                 <b-button>
-                    <nuxt-link to="/admin-page/delete/projects"
-                        >არჩევა</nuxt-link
-                    >
+                    <nuxt-link to="/admin/delete/projects">არჩევა</nuxt-link>
                 </b-button>
             </div>
         </div>
@@ -30,7 +28,7 @@
                     <h4>პუბლიკაციების წაშლა</h4>
                 </div>
                 <b-button>
-                    <nuxt-link to="/admin-page/delete/publications"
+                    <nuxt-link to="/admin/delete/publications"
                         >არჩევა</nuxt-link
                     >
                 </b-button>
@@ -39,10 +37,10 @@
         <div class="add__box col-lg-4 mt-4">
             <div class="add__box__container">
                 <div class="add__box__container__title pb-4">
-                    <h4>დამთავრებული პროექტების წაშლა</h4>
+                    <h4>განხორციელებული პროექტების წაშლა</h4>
                 </div>
                 <b-button>
-                    <nuxt-link to="/admin-page/delete/realized-projects"
+                    <nuxt-link to="/admin/delete/realized-projects"
                         >არჩევა</nuxt-link
                     >
                 </b-button>
@@ -54,9 +52,7 @@
                     <h4>ვორქშოპების წაშლა</h4>
                 </div>
                 <b-button>
-                    <nuxt-link to="/admin-page/delete/workshops"
-                        >არჩევა</nuxt-link
-                    >
+                    <nuxt-link to="/admin/delete/workshops">არჩევა</nuxt-link>
                 </b-button>
             </div>
         </div>

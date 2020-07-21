@@ -2,7 +2,7 @@
     <div class="row slider">
         <div class="works__cat__header col-12">
             <div class="works__cat__header__title">
-                <h4>პროექტები</h4>
+                <h4 @click="routeToCategory">პროექტები</h4>
             </div>
             <div class="works__cat__header__arrows">
                 <div class="left" @click="prev">
@@ -39,7 +39,7 @@ export default {
         return {
             projectsList: [],
             sliderList: [],
-            sliderCounterIndex: 0
+            sliderCounterIndex: 4
         };
     },
     created: function () {
@@ -48,7 +48,7 @@ export default {
     methods: {
         getProjects() {
             return this.$axios
-                .get("http://localhost:8081/api/get-projects")
+                .get("http://localhost:8081/api/projects")
                 .then((data) => {
                     this.projectsList = data["data"]["data"];
                     if (this.projectsList.length > 3) {
@@ -59,38 +59,38 @@ export default {
                             this.projectsList[3]
                         ];
                     }
-                    console.log(this.projectsList);
                 })
                 .catch((err) => {
                     console.log(err);
                 });
         },
+        routeToCategory() {
+            return this.$router.push("/our-works/projects/");
+        },
         routeToDetails(id) {
-            return this.$router.push("/our-works/projects$" + id);
+            return this.$router.push("/our-works/projects/" + id);
         },
         next() {
-            if (this.sliderCounterIndex < 0) {
-                this.sliderCounterIndex = 0;
-            }
-            if (this.projectsList.length - 1 > this.sliderCounterIndex) {
-                this.sliderCounterIndex++;
-                console.log(this.sliderCounterIndex);
+            if (this.projectsList.length > this.sliderCounterIndex) {
                 this.sliderList.splice(0, 1);
                 this.sliderList.push(
                     this.projectsList[this.sliderCounterIndex]
                 );
+                this.sliderCounterIndex += 1;
+                console.log(this.sliderCounterIndex);
             } else {
                 console.log("not enought length");
             }
         },
         prev() {
-            if (this.sliderCounterIndex > 0) {
-                this.sliderCounterIndex--;
-                console.log(this.sliderCounterIndex);
-                this.sliderList.splice(this.sliderList.length - 1, 1);
+            if (this.sliderCounterIndex > 4) {
+                this.sliderCounterIndex -= 1;
                 this.sliderList.unshift(
-                    this.projectsList[this.sliderCounterIndex]
+                    this.projectsList[this.sliderCounterIndex - 4]
                 );
+                this.sliderList.splice(this.sliderList.length - 1, 1);
+
+                console.log(this.sliderCounterIndex);
             } else {
                 console.log("not enought length");
             }

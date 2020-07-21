@@ -51,7 +51,7 @@ export default {
         return {
             allDataList: [],
             selectedCategory: "",
-            getApiURL: "http://localhost:8081/api/get-",
+            getApiURL: "http://localhost:8081/api/",
             deleteApiURL: "http://localhost:8081/api/delete-",
             pageTitle: ""
         };
@@ -62,14 +62,12 @@ export default {
     },
     methods: {
         getAllList() {
-            console.log(this.$route.params);
             this.selectedCategory = this.$route.params.id;
 
             return this.$axios
                 .get(`${this.getApiURL}${this.selectedCategory}`)
                 .then((data) => {
                     this.allDataList = data["data"]["data"];
-                    console.log(this.allDataList);
                 })
                 .catch((err) => {
                     console.log(err);

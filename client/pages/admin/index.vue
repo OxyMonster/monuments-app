@@ -1,5 +1,5 @@
 <template>
-    <div class="admin row justify-content-between">
+    <div class="admin row justify-content-between mt-6">
         <div class="admin__add col-lg-6">
             <div class="admin__add__container">
                 <div class="admin__add__container__icon">
@@ -8,7 +8,7 @@
                     </div>
                 </div>
                 <div class="admin__add__container__button">
-                    <nuxt-link to="/admin-page/add"> დამატება</nuxt-link>
+                    <nuxt-link to="/admin/add"> დამატება</nuxt-link>
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="admin__add__container__button">
-                    <nuxt-link to="/admin-page/delete"> წაშლა</nuxt-link>
+                    <nuxt-link to="/admin/delete"> წაშლა</nuxt-link>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
 
 <script>
 export default {
-    // middleware: "auth"
+    middleware: "auth"
 };
 </script>
 

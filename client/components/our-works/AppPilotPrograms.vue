@@ -3,7 +3,7 @@
         <div v-if="sliderList.length > 0" class="row slider">
             <div class="works__cat__header col-12">
                 <div class="works__cat__header__title">
-                    <h4>პილოტ პროგრამები</h4>
+                    <h4 @click="routeToCategory">პილოტ პროგრამები</h4>
                 </div>
                 <div class="works__cat__header__arrows">
                     <div class="left" @click="prev">
@@ -46,7 +46,7 @@ export default {
         return {
             pilotProgramsList: [],
             sliderList: [],
-            sliderCounterIndex: 0
+            sliderCounterIndex: 4
         };
     },
     created: function () {
@@ -55,7 +55,7 @@ export default {
     methods: {
         getPilotPrograms() {
             return this.$axios
-                .get("http://localhost:8081/api/get-pilot-programs")
+                .get("http://localhost:8081/api/pilot-projects")
                 .then((data) => {
                     this.pilotProgramsList = data["data"]["data"];
                     if (this.pilotProgramsList.length > 0) {
@@ -66,38 +66,38 @@ export default {
                             this.pilotProgramsList[3]
                         ];
                     }
-                    console.log(this.pilotProgramsList);
                 })
                 .catch((err) => {
                     console.log(err);
                 });
         },
         routeToDetails(id) {
-            return this.$router.push("/our-works/pilot-projects$" + id);
+            return this.$router.push("/our-works/pilot-projects/" + id);
+        },
+        routeToCategory() {
+            return this.$router.push("/our-works/pilot-projects");
         },
         next() {
-            if (this.sliderCounterIndex < 0) {
-                this.sliderCounterIndex = 0;
-            }
-            if (this.pilotProgramsList.length - 1 > this.sliderCounterIndex) {
-                this.sliderCounterIndex++;
-                console.log(this.sliderCounterIndex);
+            if (this.pilotProgramsList.length > this.sliderCounterIndex) {
                 this.sliderList.splice(0, 1);
                 this.sliderList.push(
                     this.pilotProgramsList[this.sliderCounterIndex]
                 );
+                this.sliderCounterIndex += 1;
+                console.log(this.sliderCounterIndex);
             } else {
                 console.log("not enought length");
             }
         },
         prev() {
-            if (this.sliderCounterIndex > 0) {
-                this.sliderCounterIndex--;
-                console.log(this.sliderCounterIndex);
-                this.sliderList.splice(this.sliderList.length - 1, 1);
+            if (this.sliderCounterIndex > 4) {
+                this.sliderCounterIndex -= 1;
                 this.sliderList.unshift(
-                    this.pilotProgramsList[this.sliderCounterIndex]
+                    this.pilotProgramsList[this.sliderCounterIndex - 4]
                 );
+                this.sliderList.splice(this.sliderList.length - 1, 1);
+
+                console.log(this.sliderCounterIndex);
             } else {
                 console.log("not enought length");
             }

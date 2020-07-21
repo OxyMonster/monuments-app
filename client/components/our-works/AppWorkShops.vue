@@ -2,7 +2,7 @@
     <div class="row slider">
         <div class="works__cat__header col-12">
             <div class="works__cat__header__title">
-                <h4>ვორქშოფები</h4>
+                <h4 @click="routeToCategory">ვორქშოფები</h4>
             </div>
             <div class="works__cat__header__arrows">
                 <div class="left" @click="prev">
@@ -39,7 +39,7 @@ export default {
         return {
             workShopsList: [],
             sliderList: [],
-            sliderCounterIndex: 0
+            sliderCounterIndex: 4
         };
     },
     created: function () {
@@ -48,7 +48,7 @@ export default {
     methods: {
         getWorkShops() {
             return this.$axios
-                .get("http://localhost:8081/api/get-work-shops")
+                .get("http://localhost:8081/api/work-shops")
 
                 .then((data) => {
                     this.workShopsList = data["data"]["data"];
@@ -62,38 +62,38 @@ export default {
                     } else {
                         this.sliderList = [];
                     }
-                    console.log(this.workShopsList);
                 })
                 .catch((err) => {
                     console.log(err);
                 });
         },
         routeToDetails(id) {
-            return this.$router.push("/our-works/work-shops$" + id);
+            return this.$router.push("/our-works/work-shops/" + id);
+        },
+        routeToCategory() {
+            return this.$router.push("/our-works/work-shops/");
         },
         next() {
-            if (this.sliderCounterIndex < 0) {
-                this.sliderCounterIndex = 0;
-            }
-            if (this.workShopsList.length - 1 > this.sliderCounterIndex) {
-                this.sliderCounterIndex++;
-                console.log(this.sliderCounterIndex);
+            if (this.workShopsList.length > this.sliderCounterIndex) {
                 this.sliderList.splice(0, 1);
                 this.sliderList.push(
                     this.workShopsList[this.sliderCounterIndex]
                 );
+                this.sliderCounterIndex += 1;
+                console.log(this.sliderCounterIndex);
             } else {
                 console.log("not enought length");
             }
         },
         prev() {
-            if (this.sliderCounterIndex > 0) {
-                this.sliderCounterIndex--;
-                console.log(this.sliderCounterIndex);
-                this.sliderList.splice(this.sliderList.length - 1, 1);
+            if (this.sliderCounterIndex > 4) {
+                this.sliderCounterIndex -= 1;
                 this.sliderList.unshift(
-                    this.workShopsList[this.sliderCounterIndex]
+                    this.workShopsList[this.sliderCounterIndex - 4]
                 );
+                this.sliderList.splice(this.sliderList.length - 1, 1);
+
+                console.log(this.sliderCounterIndex);
             } else {
                 console.log("not enought length");
             }

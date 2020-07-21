@@ -22,7 +22,7 @@
             </div>
             <div class="slider__more col-12">
                 <div class="slider__more__line"></div>
-                <nuxt-link to="/our-works">დეტალურად</nuxt-link>
+                <nuxt-link to="/our-works/projects">დეტალურად</nuxt-link>
             </div>
         </div>
         <div class="slider__img row col-md-6 justify-content-between p-0">
@@ -31,7 +31,10 @@
                 :key="index"
                 class="slider__img__box col-4"
             >
-                <div class="slider__img__box__container">
+                <div
+                    class="slider__img__box__container"
+                    @click="routeToDetails(item._id)"
+                >
                     <img
                         :src="'http://localhost:8081/' + item.file[0].path"
                         alt="slider_img"
@@ -63,7 +66,7 @@ export default {
         return {
             sliderList: [],
             projectsList: [],
-            sliderCounterIndex: 0
+            sliderCounterIndex: 3
         };
     },
     created: function () {
@@ -72,7 +75,7 @@ export default {
     methods: {
         getProjects() {
             return this.$axios
-                .get("http://localhost:8081/api/get-projects")
+                .get("http://localhost:8081/api/projects")
                 .then((data) => {
                     this.projectsList = data["data"]["data"];
                     if (this.projectsList.length > 3) {
@@ -82,35 +85,37 @@ export default {
                             this.projectsList[2]
                         ];
                     }
-                    console.log(this.projectsList);
                 })
                 .catch((err) => {
                     console.log(err);
                 });
         },
+        routeToDetails(id) {
+            return this.$router.push("/our-works/projects/" + id);
+        },
         next() {
-            if (this.sliderCounterIndex < 0) {
-                this.sliderCounterIndex = 0;
-            }
             if (this.projectsList.length - 1 > this.sliderCounterIndex) {
-                this.sliderCounterIndex++;
-                console.log(this.sliderCounterIndex);
+                this.sliderCounterIndex += 1;
                 this.sliderList.splice(0, 1);
                 this.sliderList.push(
                     this.projectsList[this.sliderCounterIndex]
                 );
+                console.log(this.sliderList);
+
+                console.log(this.sliderCounterIndex);
             } else {
                 console.log("not enought length");
             }
         },
         prev() {
-            if (this.sliderCounterIndex > 0) {
-                this.sliderCounterIndex--;
-                console.log(this.sliderCounterIndex);
-                this.sliderList.splice(this.sliderList.length - 1, 1);
+            if (this.sliderCounterIndex > 3) {
+                this.sliderCounterIndex -= 1;
                 this.sliderList.unshift(
-                    this.projectsList[this.sliderCounterIndex]
+                    this.projectsList[this.sliderCounterIndex - 3]
                 );
+                this.sliderList.splice(this.sliderList.length - 1, 1);
+
+                console.log(this.sliderCounterIndex);
             } else {
                 console.log("not enought length");
             }
@@ -154,6 +159,7 @@ export default {
             &__container {
                 width: 100%;
                 height: 456px;
+                cursor: pointer;
                 img {
                     width: 100%;
                     height: 100%;
