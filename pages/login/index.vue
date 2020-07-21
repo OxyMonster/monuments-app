@@ -14,7 +14,7 @@
                 <!-- Icon -->
                 <div class="fadeIn first py-4">
                     <img
-                        id="icon"   
+                        id="icon"
                         src="~/assets/img/admin.svg"
                         style="width: 100px; heigth: 100px;"
                         alt="User Icon"

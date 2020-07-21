@@ -1,0 +1,62 @@
+{
+  "AppFooter": {
+    "description": "Auto imported from components/AppFooter.vue"
+  },
+  "LazyAppFooter": {
+    "description": "Auto imported from components/AppFooter.vue"
+  },
+  "AppHeader": {
+    "description": "Auto imported from components/AppHeader.vue"
+  },
+  "LazyAppHeader": {
+    "description": "Auto imported from components/AppHeader.vue"
+  },
+  "AppSlider": {
+    "description": "Auto imported from components/home/AppSlider.vue"
+  },
+  "LazyAppSlider": {
+    "description": "Auto imported from components/home/AppSlider.vue"
+  },
+  "AppLoading": {
+    "description": "Auto imported from components/loading/AppLoading.vue"
+  },
+  "LazyAppLoading": {
+    "description": "Auto imported from components/loading/AppLoading.vue"
+  },
+  "AppPilotPrograms": {
+    "description": "Auto imported from components/our-works/AppPilotPrograms.vue"
+  },
+  "LazyAppPilotPrograms": {
+    "description": "Auto imported from components/our-works/AppPilotPrograms.vue"
+  },
+  "AppProjects": {
+    "description": "Auto imported from components/our-works/AppProjects.vue"
+  },
+  "LazyAppProjects": {
+    "description": "Auto imported from components/our-works/AppProjects.vue"
+  },
+  "AppRealizedProjects": {
+    "description": "Auto imported from components/our-works/AppRealizedProjects.vue"
+  },
+  "LazyAppRealizedProjects": {
+    "description": "Auto imported from components/our-works/AppRealizedProjects.vue"
+  },
+  "AppWorkShops": {
+    "description": "Auto imported from components/our-works/AppWorkShops.vue"
+  },
+  "LazyAppWorkShops": {
+    "description": "Auto imported from components/our-works/AppWorkShops.vue"
+  },
+  "AppAccordion": {
+    "description": "Auto imported from components/shared/AppAccordion.vue"
+  },
+  "LazyAppAccordion": {
+    "description": "Auto imported from components/shared/AppAccordion.vue"
+  },
+  "AppSpinner": {
+    "description": "Auto imported from components/spinner/AppSpinner.vue"
+  },
+  "LazyAppSpinner": {
+    "description": "Auto imported from components/spinner/AppSpinner.vue"
+  }
+}
