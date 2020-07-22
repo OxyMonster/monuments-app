@@ -50,7 +50,6 @@ export default {
 .works {
     &__cat {
         background-color: #ffffff;
-        box-shadow: 0 4px 6px;
         border-radius: 8px;
         margin-top: 50px;
         padding: 30px;

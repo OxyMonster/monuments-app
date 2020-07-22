@@ -58,7 +58,6 @@ export default {
 .gallery {
     background: white;
     border-radius: 8px;
-    box-shadow: 0 4px 6px;
 
     &__title {
         h4 {

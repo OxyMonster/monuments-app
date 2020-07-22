@@ -92,7 +92,6 @@ export default {
                             this.projectsList[0],
                             this.projectsList[1],
                             this.projectsList[2],
-                            this.projectsList[3],
                         ]
                     } else {
                         if (this.projectsList.length === 1) {

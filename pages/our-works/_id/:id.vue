@@ -61,7 +61,6 @@ export default {
 .details {
     background: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 6px;
     padding: 30px;
     &__title {
         h4 {
