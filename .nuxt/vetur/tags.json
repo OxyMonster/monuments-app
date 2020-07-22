@@ -11,23 +11,11 @@
   "LazyAppHeader": {
     "description": "Auto imported from components/AppHeader.vue"
   },
-  "AppLoading": {
-    "description": "Auto imported from components/loading/AppLoading.vue"
+  "AppSlider": {
+    "description": "Auto imported from components/home/AppSlider.vue"
   },
-  "LazyAppLoading": {
-    "description": "Auto imported from components/loading/AppLoading.vue"
-  },
-  "AppAccordion": {
-    "description": "Auto imported from components/shared/AppAccordion.vue"
-  },
-  "LazyAppAccordion": {
-    "description": "Auto imported from components/shared/AppAccordion.vue"
-  },
-  "AppBurgerMenu": {
-    "description": "Auto imported from components/shared/AppBurgerMenu.vue"
-  },
-  "LazyAppBurgerMenu": {
-    "description": "Auto imported from components/shared/AppBurgerMenu.vue"
+  "LazyAppSlider": {
+    "description": "Auto imported from components/home/AppSlider.vue"
   },
   "AppPilotPrograms": {
     "description": "Auto imported from components/our-works/AppPilotPrograms.vue"
@@ -53,11 +41,23 @@
   "LazyAppWorkShops": {
     "description": "Auto imported from components/our-works/AppWorkShops.vue"
   },
-  "AppSlider": {
-    "description": "Auto imported from components/home/AppSlider.vue"
+  "AppLoading": {
+    "description": "Auto imported from components/loading/AppLoading.vue"
   },
-  "LazyAppSlider": {
-    "description": "Auto imported from components/home/AppSlider.vue"
+  "LazyAppLoading": {
+    "description": "Auto imported from components/loading/AppLoading.vue"
+  },
+  "AppAccordion": {
+    "description": "Auto imported from components/shared/AppAccordion.vue"
+  },
+  "LazyAppAccordion": {
+    "description": "Auto imported from components/shared/AppAccordion.vue"
+  },
+  "AppBurgerMenu": {
+    "description": "Auto imported from components/shared/AppBurgerMenu.vue"
+  },
+  "LazyAppBurgerMenu": {
+    "description": "Auto imported from components/shared/AppBurgerMenu.vue"
   },
   "AppSpinner": {
     "description": "Auto imported from components/spinner/AppSpinner.vue"
