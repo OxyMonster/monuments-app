@@ -1,53 +1,52 @@
 <template>
-    <div class="wrapper row">
-        <router-view></router-view>
-        <AppHome></AppHome>
-    </div>
+  <div class="wrapper row">
+    <router-view></router-view>
+    <AppHome></AppHome>
+  </div>
 </template>
 
 <script>
 import AppHome from "../pages/home/index";
 
 export default {
-    components: { AppHome }
+  components: { AppHome },
 };
 </script>
 
 <style lang="scss">
 .wrapper {
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    // background: #141313;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  // background: #141313;
 
-    &__header {
-        background-color: #ffffff;
-    }
+  &__header {
+    background-color: #ffffff;
+  }
 }
 
 .title {
-    font-family: "Quicksand", "Source Sans Pro", -apple-system,
-        BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-        sans-serif;
-    display: block;
-    font-weight: 300;
-    font-size: 100px;
-    color: #35495e;
-    letter-spacing: 1px;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px;
 }
 
 .subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
+  font-weight: 300;
+  font-size: 42px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
 }
 
 .links {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 </style>
