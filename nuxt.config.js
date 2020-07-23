@@ -1,10 +1,15 @@
 /* eslint-disable prettier/prettier */
+import shrinkRay from 'shrink-ray-current'
+
 export default {
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
   mode: 'universal',
+  render: {
+    compressor: shrinkRay()
+  },
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
