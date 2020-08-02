@@ -74,6 +74,8 @@ export default {
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
     '@nuxtjs/auth',
+    'nuxt-lazy-load'
+
 
   ],
   /*

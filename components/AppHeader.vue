@@ -1,7 +1,9 @@
 <template>
-    <div class="header row p-2">
+    <div class="header d-flex p-2">
         <div class="header__logo col-2">
-            <h1>Logo</h1>
+            <div class="header__logo__container">
+                <img src="~/assets/img/logo.svg" alt />
+            </div>
         </div>
 
         <div class="header__links col-10 row justify-content-end p-0">
@@ -65,6 +67,16 @@ export default {
     padding-right: 70px !important;
     min-width: fit-content;
 
+    &__logo {
+        &__container {
+            width: 160px;
+            height: 100px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
     &__links {
         @media (max-width: 1120px) {
             display: none;

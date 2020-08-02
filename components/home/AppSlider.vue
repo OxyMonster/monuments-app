@@ -33,6 +33,7 @@
             >
                 <div
                     class="slider__img__box__container"
+                    lazy-background="~/assets/img/placeholder.png"
                     @click="routeToDetails(item._id)"
                 >
                     <img
@@ -55,11 +56,11 @@
                 </p>
             </div>
             <div class="slider__arrow__img">
-                <div class="" style="heigth: 70px; width: 80px;">
+                <div class style="heigth: 70px; width: 80px;">
                     <img
                         style="cursor: pointer; heigth: 100%; width: 100%;"
                         src="~/assets/img/rigjt-arrow.png"
-                        alt=""
+                        alt
                         @click="next"
                     />
                 </div>

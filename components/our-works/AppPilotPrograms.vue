@@ -26,6 +26,7 @@
                 <div
                     v-if="sliderList.length > 0"
                     class="slider__img__container"
+                    lazy-background="~/assets/img/placeholder.png"
                     @click="routeToDetails(item._id)"
                 >
                     <img

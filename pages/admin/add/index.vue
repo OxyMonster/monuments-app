@@ -172,10 +172,13 @@ export default {
         },
         onFileSelected(event) {
             this.selectedFile = event.target.files[0]
+            console.log(this.selectedFile)
+            console.log('hereee')
             if (
                 this.selectedFile.type === 'image/jpeg' ||
                 this.selectedFile.type === 'image/png' ||
-                this.selectedFile.type === 'image/jpg'
+                this.selectedFile.type === 'image/jpg' ||
+                this.selectedFile.type === 'image/webp'
             ) {
                 this.isImgValid = true
                 this.fileError = false

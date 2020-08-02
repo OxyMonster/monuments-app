@@ -12,7 +12,10 @@
                 <h4>{{ item.title }}</h4>
             </div>
             <div class="details__container__img col-lg-5 pl-0">
-                <div class="details__container__img__container">
+                <div
+                    lazy-background="~/assets/img/placeholder.png"
+                    class="details__container__img__container"
+                >
                     <img
                         :src="'http://94.237.98.180:8081/' + item.file[0].path"
                         alt="slider_img"

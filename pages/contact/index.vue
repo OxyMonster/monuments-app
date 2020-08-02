@@ -2,7 +2,7 @@
     <div class="row contact justify-content-between">
         <div class="contact__left col-lg-6">
             <div class="contact__left__map">
-                <img src="" alt="map" />
+                <img src alt="map" />
             </div>
         </div>
         <div class="contact__right col-lg row justify-content-between">
@@ -11,20 +11,20 @@
                     <h4>კლიენტებისთვის</h4>
                 </div>
                 <div class="contact__right__container__text">
-                    <p>+995 555 515 521</p>
+                    <p>557 444 030</p>
                 </div>
                 <div class="contact__right__container__text">
-                    <a>+client@domain.com</a>
+                    <a>ivertmsheni1@mail.ru</a>
                 </div>
 
                 <div class="contact__right__container__title mt-5">
                     <h4>კონტრაქტორებისთვის</h4>
                 </div>
                 <div class="contact__right__container__text">
-                    <p>+995 555 515 521</p>
+                    <p>599 299 541</p>
                 </div>
                 <div class="contact__right__container__text">
-                    <a>Contractors@domain.com</a>
+                    <a>ivertmsheni1@mail.ru</a>
                 </div>
             </div>
             <div class="contact__right__container col-lg-6">
@@ -35,7 +35,7 @@
                     <p>Tbilisi, Georgia</p>
                 </div>
                 <div class="contact__right__container__text">
-                    <p>zip code - 1200</p>
+                    <p>ალექსანდრე ყაზბეგის გამზირი N14</p>
                 </div>
             </div>
         </div>

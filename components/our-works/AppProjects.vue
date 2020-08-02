@@ -24,11 +24,12 @@
             <div
                 v-if="sliderList.length > 0"
                 class="slider__img__container"
+                lazy-background="~/assets/img/placeholder.png"
                 @click="routeToDetails(item._id)"
             >
                 <img
                     :src="'http://94.237.98.180:8081/' + item.file[0].path"
-                    alt="slider_img"
+                    alt=""
                 />
             </div>
         </div>

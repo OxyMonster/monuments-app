@@ -23,6 +23,18 @@
   "LazyAppLoading": {
     "description": "Auto imported from components/loading/AppLoading.vue"
   },
+  "AppAccordion": {
+    "description": "Auto imported from components/shared/AppAccordion.vue"
+  },
+  "LazyAppAccordion": {
+    "description": "Auto imported from components/shared/AppAccordion.vue"
+  },
+  "AppBurgerMenu": {
+    "description": "Auto imported from components/shared/AppBurgerMenu.vue"
+  },
+  "LazyAppBurgerMenu": {
+    "description": "Auto imported from components/shared/AppBurgerMenu.vue"
+  },
   "AppPilotPrograms": {
     "description": "Auto imported from components/our-works/AppPilotPrograms.vue"
   },
@@ -46,18 +58,6 @@
   },
   "LazyAppWorkShops": {
     "description": "Auto imported from components/our-works/AppWorkShops.vue"
-  },
-  "AppAccordion": {
-    "description": "Auto imported from components/shared/AppAccordion.vue"
-  },
-  "LazyAppAccordion": {
-    "description": "Auto imported from components/shared/AppAccordion.vue"
-  },
-  "AppBurgerMenu": {
-    "description": "Auto imported from components/shared/AppBurgerMenu.vue"
-  },
-  "LazyAppBurgerMenu": {
-    "description": "Auto imported from components/shared/AppBurgerMenu.vue"
   },
   "AppSpinner": {
     "description": "Auto imported from components/spinner/AppSpinner.vue"
