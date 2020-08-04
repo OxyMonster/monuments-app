@@ -70,7 +70,7 @@ export default {}
                 h4 {
                     color: #1d1d1d;
                     font-size: 20px;
-
+                    text-align: left;
                     @media (max-width: 600px) {
                         text-align: center;
                     }
@@ -79,6 +79,7 @@ export default {}
             &__text {
                 color: #808080;
                 font-size: 18px;
+                text-align: left;
 
                 @media (max-width: 600px) {
                     text-align: center !important;
