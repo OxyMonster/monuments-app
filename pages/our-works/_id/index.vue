@@ -11,11 +11,7 @@
             <div class="gallery__box__container">
                 <div class="gallery__box__container__img">
                     <img
-                        v-lazy-load
-                        :data-src="
-                            'http://94.237.98.180:8081/' + item.file[0].path
-                        "
-                        lazy-background="~/assets/img/placeholder.png"
+                        :src="'http://94.237.98.180:8081/' + item.file[0].path"
                         alt="slider_img"
                         @click="routeToDetails(item._id)"
                     />

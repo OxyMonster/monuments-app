@@ -42,7 +42,7 @@
                     </div>
                     <div class="delete__box__container__remove col-12 mt-5">
                         <div class="w-100 d-flex justify-content-center">
-                            <b-button variant="warning">რედაქტირება</b-button>
+                            <!-- <b-button variant="warning">რედაქტირება</b-button> -->
                         </div>
                         <div class="w-100 d-flex justify-content-center mt-3">
                             <b-button
@@ -63,7 +63,6 @@
                 :key="index"
                 class="delete__box col-lg-4 my-4"
             >
-                <h1>hello</h1>
                 <div class="delete__box__container">
                     <div class="delete__box__container__title">
                         <h4>{{ item.title }}</h4>
@@ -73,7 +72,7 @@
                     </div>
                     <div class="delete__box__container__remove col-12 mt-5">
                         <div class="w-100 d-flex justify-content-center">
-                            <b-button variant="warning">რედაქტირება</b-button>
+                            <!-- <b-button variant="warning">რედაქტირება</b-button> -->
                         </div>
                         <div class="w-100 d-flex justify-content-center mt-3">
                             <b-button
@@ -187,6 +186,14 @@ export default {
             box-shadow: 0 3px 4px #c4c4c4;
             padding: 50px;
             border-radius: 8px;
+
+            &__title {
+                height: 80px;
+            }
+
+            &__id {
+                margin-top: 90px;
+            }
 
             &__remove {
                 button {

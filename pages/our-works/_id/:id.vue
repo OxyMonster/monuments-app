@@ -1,7 +1,7 @@
 <template>
-    <div class="details">
+    <div class="details pb-5">
         <div class="details__title">
-            <h4>{{ selectedPostURL[2] }}</h4>
+            <!-- <h4>{{ selectedPostURL[2] }}</h4> -->
         </div>
         <div
             v-for="item in allDataList"
@@ -81,9 +81,11 @@ export default {
         }
         &__img {
             height: 346px;
+            float: left;
+            clear: left;
 
             &__container {
-                height: 346px;
+                height: 100%;
                 line-height: 24px;
 
                 img {
