@@ -2,7 +2,7 @@
     <div class="row contact justify-content-between">
         <div class="contact__left col-lg-6">
             <div class="contact__left__map">
-                <img src alt="map" />
+                <img src="~/assets/img/map.png" alt="map" />
             </div>
         </div>
         <div class="contact__right col-lg row justify-content-between">
@@ -49,13 +49,28 @@ export default {}
 <style lang="scss">
 .contact {
     height: 100vh;
+
+    &__left {
+        &__map {
+            width: 580px;
+            height: 291px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+                object-fit: cover;
+            }
+        }
+    }
     &__right {
         &__container {
+            margin-top: 17px;
             &__title {
                 h4 {
                     color: #1d1d1d;
                     font-size: 20px;
-                    text-align: left;
+
                     @media (max-width: 600px) {
                         text-align: center;
                     }
@@ -64,7 +79,7 @@ export default {}
             &__text {
                 color: #808080;
                 font-size: 18px;
-                text-align: left;
+
                 @media (max-width: 600px) {
                     text-align: center !important;
                 }
