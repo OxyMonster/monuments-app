@@ -11,12 +11,6 @@
   "LazyAppHeader": {
     "description": "Auto imported from components/AppHeader.vue"
   },
-  "AppSlider": {
-    "description": "Auto imported from components/home/AppSlider.vue"
-  },
-  "LazyAppSlider": {
-    "description": "Auto imported from components/home/AppSlider.vue"
-  },
   "AppLoading": {
     "description": "Auto imported from components/loading/AppLoading.vue"
   },
@@ -58,6 +52,12 @@
   },
   "LazyAppBurgerMenu": {
     "description": "Auto imported from components/shared/AppBurgerMenu.vue"
+  },
+  "AppSlider": {
+    "description": "Auto imported from components/home/AppSlider.vue"
+  },
+  "LazyAppSlider": {
+    "description": "Auto imported from components/home/AppSlider.vue"
   },
   "AppSpinner": {
     "description": "Auto imported from components/spinner/AppSpinner.vue"

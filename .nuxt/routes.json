@@ -3,84 +3,98 @@
     "name": "about-us",
     "path": "/about-us",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/about-us/index.vue",
-    "chunkName": "pages/about-us/index"
+    "chunkName": "pages/about-us/index",
+    "_name": "_22f49593"
   },
   {
     "name": "admin",
     "path": "/admin",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/admin/index.vue",
-    "chunkName": "pages/admin/index"
+    "chunkName": "pages/admin/index",
+    "_name": "_7cb75ad0"
   },
   {
     "name": "contact",
     "path": "/contact",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/contact/index.vue",
-    "chunkName": "pages/contact/index"
+    "chunkName": "pages/contact/index",
+    "_name": "_109138e1"
   },
   {
     "name": "home",
     "path": "/home",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/home/index.vue",
-    "chunkName": "pages/home/index"
+    "chunkName": "pages/home/index",
+    "_name": "_9eb9e558"
   },
   {
     "name": "login",
     "path": "/login",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/login/index.vue",
-    "chunkName": "pages/login/index"
+    "chunkName": "pages/login/index",
+    "_name": "_769a6e6a"
   },
   {
     "name": "our-works",
     "path": "/our-works",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/our-works/index.vue",
-    "chunkName": "pages/our-works/index"
+    "chunkName": "pages/our-works/index",
+    "_name": "_42d4b87c"
   },
   {
     "name": "publications",
     "path": "/publications",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/publications/index.vue",
-    "chunkName": "pages/publications/index"
+    "chunkName": "pages/publications/index",
+    "_name": "_4ee2803c"
   },
   {
     "name": "what-we-do",
     "path": "/what-we-do",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/what-we-do/index.vue",
-    "chunkName": "pages/what-we-do/index"
+    "chunkName": "pages/what-we-do/index",
+    "_name": "_96498bd4"
   },
   {
     "name": "admin-add",
     "path": "/admin/add",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/admin/add/index.vue",
-    "chunkName": "pages/admin/add/index"
+    "chunkName": "pages/admin/add/index",
+    "_name": "_76545fe2"
   },
   {
     "name": "admin-delete",
     "path": "/admin/delete",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/admin/delete/index.vue",
-    "chunkName": "pages/admin/delete/index"
+    "chunkName": "pages/admin/delete/index",
+    "_name": "_552f3be0"
   },
   {
     "name": "admin-delete-id",
     "path": "/admin/delete/:id",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/admin/delete/_id.vue",
-    "chunkName": "pages/admin/delete/_id"
+    "chunkName": "pages/admin/delete/_id",
+    "_name": "_011ab648"
   },
   {
     "name": "our-works-id",
     "path": "/our-works/:id?",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/our-works/_id/index.vue",
-    "chunkName": "pages/our-works/_id/index"
+    "chunkName": "pages/our-works/_id/index",
+    "_name": "_06930dad"
   },
   {
     "name": "our-works-id-:id",
     "path": "/our-works/:id?/:id",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/our-works/_id/:id.vue",
-    "chunkName": "pages/our-works/_id/:id"
+    "chunkName": "pages/our-works/_id/:id",
+    "_name": "_b8a7f220"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_240ffe10"
   }
 ]
