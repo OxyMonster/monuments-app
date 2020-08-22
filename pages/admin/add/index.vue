@@ -141,8 +141,7 @@ export default {
     components: { AppSpinner },
     data() {
         return {
-            // apiURL: 'http://94.237.98.180:8081',
-            apiURL: 'http://localhost:8081',
+            apiURL: 'http://94.237.98.180:8081',
             description: '',
             title: '',
             selectedFiles: [],
