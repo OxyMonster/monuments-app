@@ -88,6 +88,7 @@
                                 style="display: none;"
                                 type="file"
                                 name="file"
+                                multiple
                                 @change="onFileSelected"
                             />
                             <b-button
@@ -97,10 +98,15 @@
                             >
                         </div>
                         <div class="col-12 my-4">
-                            <p>{{ selectedFile ? selectedFile.name : '' }}</p>
+                            <p
+                                v-for="(img, index) in selectedFiles"
+                                :key="index"
+                            >
+                                {{ selectedFiles.length > 0 ? img.name : '' }}
+                            </p>
                             <p v-if="fileError" style="color: #f03434;">
                                 გთხოვთ ატვირთოთ შემდეგი ფორმატის სურათები: png,
-                                jpg, jpeg
+                                jpg, jpeg, webp
                             </p>
                         </div>
                         <div
@@ -135,10 +141,11 @@ export default {
     components: { AppSpinner },
     data() {
         return {
-            apiURL: 'http://94.237.98.180:8081',
+            // apiURL: 'http://94.237.98.180:8081',
+            apiURL: 'http://localhost:8081',
             description: '',
             title: '',
-            selectedFile: null,
+            selectedFiles: [],
             modalType: '',
             modalTitle: '',
             isFormValid: true,
@@ -171,15 +178,24 @@ export default {
             this.$refs['my-modal'].show()
         },
         onFileSelected(event) {
-            this.selectedFile = event.target.files[0]
-            console.log(this.selectedFile)
-            console.log('hereee')
-            if (
-                this.selectedFile.type === 'image/jpeg' ||
-                this.selectedFile.type === 'image/png' ||
-                this.selectedFile.type === 'image/jpg' ||
-                this.selectedFile.type === 'image/webp'
-            ) {
+            this.selectedFiles = event.target.files
+            let isImgFormatValid = false
+
+            for (const img of this.selectedFiles) {
+                if (
+                    img.type === 'image/jpeg' ||
+                    img.type === 'image/png' ||
+                    img.type === 'image/jpg' ||
+                    img.type === 'image/webp'
+                ) {
+                    isImgFormatValid = true
+                } else {
+                    isImgFormatValid = false
+                    this.selectedFiles = []
+                    break
+                }
+            }
+            if (isImgFormatValid) {
                 this.isImgValid = true
                 this.fileError = false
             } else {
@@ -191,11 +207,11 @@ export default {
             this.isLoading = true
             // * * * Validate form * * *
             if (
-                (this.title.length > 0 &&
-                    this.description.length > 0 &&
-                    this.selectedFile &&
-                    this.selectedFile.name.length > 0,
-                this.isImgValid)
+                this.title.length > 0 &&
+                this.description.length > 0 &&
+                this.selectedFiles &&
+                // this.selectedFiles.length > 0,
+                this.isImgValid
             ) {
                 this.isFormValid = true
             } else {
@@ -205,7 +221,14 @@ export default {
             // * * * Post Data * * * *
             if (this.isFormValid) {
                 const fd = new FormData()
-                fd.append('image', this.selectedFile, this.selectedFile.name)
+
+                for (const item of this.selectedFiles) {
+                    console.log(item)
+                }
+
+                for (const file of this.selectedFiles) {
+                    fd.append('file', file)
+                }
                 fd.append('title', this.title)
                 fd.append('description', this.description)
 
@@ -217,11 +240,17 @@ export default {
                                 // * * Clear * *
                                 this.title = ''
                                 this.description = ''
-                                this.selectedFile = null
+                                this.selectedFiles = null
                                 this.isLoading = false
                             })
                             .catch((err) => {
                                 console.log(err)
+                                // * * Clear * *
+                                this.isLoading = false
+                                this.title = ''
+                                this.description = ''
+                                this.selectedFiles = null
+                                this.isLoading = false
                             })
 
                         break
@@ -232,11 +261,17 @@ export default {
                                 // * * Clear * *
                                 this.title = ''
                                 this.description = ''
-                                this.selectedFile = null
+                                this.selectedFiles = null
                                 this.isLoading = false
                             })
                             .catch((err) => {
                                 console.log(err)
+                                // * * Clear * *
+                                this.isLoading = false
+                                this.title = ''
+                                this.description = ''
+                                this.selectedFiles = null
+                                this.isLoading = false
                             })
                         break
                     case 'publications':
@@ -246,11 +281,17 @@ export default {
                                 // * * Clear * *
                                 this.title = ''
                                 this.description = ''
-                                this.selectedFile = null
+                                this.selectedFiles = null
                                 this.isLoading = false
                             })
                             .catch((err) => {
                                 console.log(err)
+                                // * * Clear * *
+                                this.isLoading = false
+                                this.title = ''
+                                this.description = ''
+                                this.selectedFiles = null
+                                this.isLoading = false
                             })
                         break
                     case 'realized-projects':
@@ -264,11 +305,17 @@ export default {
                                 // * * Clear * *
                                 this.title = ''
                                 this.description = ''
-                                this.selectedFile = null
+                                this.selectedFiles = null
                                 this.isLoading = false
                             })
                             .catch((err) => {
                                 console.log(err)
+                                // * * Clear * *
+                                this.isLoading = false
+                                this.title = ''
+                                this.description = ''
+                                this.selectedFiles = null
+                                this.isLoading = false
                             })
                         break
                     case 'workshops':
@@ -279,11 +326,17 @@ export default {
                                 // * * Clear * *
                                 this.title = ''
                                 this.description = ''
-                                this.selectedFile = null
+                                this.selectedFiles = null
                                 this.isLoading = false
                             })
                             .catch((err) => {
                                 console.log(err)
+                                // * * Clear * *
+                                this.isLoading = false
+                                this.title = ''
+                                this.description = ''
+                                this.selectedFiles = null
+                                this.isLoading = false
                             })
                 }
             }

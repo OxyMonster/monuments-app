@@ -171,6 +171,9 @@ export default {
                     console.log(data)
                     this.allDataList.splice(index, 1)
                 })
+                .catch((err) => {
+                    console.log(err)
+                })
         },
     },
 }

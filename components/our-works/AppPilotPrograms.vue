@@ -62,6 +62,7 @@ export default {
                 .get('http://94.237.98.180:8081/api/pilot-projects')
                 .then((data) => {
                     this.pilotProgramsList = data['data']['data']
+                    console.log(this.pilotProgramsList)
                     if (this.pilotProgramsList.length > 4) {
                         this.sliderList = [
                             this.pilotProgramsList[0],
