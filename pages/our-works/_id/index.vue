@@ -59,7 +59,7 @@ export default {
                     this.selectedCategoryTitle = 'პილოტ პროგრამები'
                     break
                 case 'projects':
-                    this.selectedCategoryTitle = 'პროექტებები'
+                    this.selectedCategoryTitle = 'მიმდინარე პროექტები'
                     break
                 case 'realized-projects':
                     this.selectedCategoryTitle = 'განხორციელებული პროექტები'

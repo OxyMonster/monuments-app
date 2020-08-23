@@ -2,7 +2,7 @@
     <div class="row slider">
         <div class="works__cat__header col-12">
             <div class="works__cat__header__title">
-                <h4 @click="routeToCategory">პროექტები</h4>
+                <h4 @click="routeToCategory">მიმდინარე პროექტები</h4>
             </div>
             <div
                 v-if="sliderList.length > 0"
@@ -24,7 +24,6 @@
             <div
                 v-if="sliderList.length > 0"
                 class="slider__img__container"
-                lazy-background="~/assets/img/placeholder.png"
                 @click="routeToDetails(item._id)"
             >
                 <img

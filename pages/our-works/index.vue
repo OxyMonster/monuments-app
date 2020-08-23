@@ -1,11 +1,11 @@
 <template>
     <div class="row works">
-        <div class="works__cat col-12 mt-0">
+        <!-- <div class="works__cat col-12 mt-0">
             <div class="works__cat__slider col-12">
                 <AppPilotPrograms />
             </div>
-        </div>
-        <div class="works__cat col-12">
+        </div> -->
+        <div class="works__cat col-12 mt-0">
             <div class="works__cat__slider col-12">
                 <AppProjects />
             </div>
@@ -15,26 +15,26 @@
                 <AppRealizedProjects />
             </div>
         </div>
-        <div class="works__cat col-12">
+        <!-- <div class="works__cat col-12">
             <div class="works__cat__slider col-12">
                 <AppWorkShops />
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
 <script>
-import { AppPilotPrograms } from '../../components/our-works/AppPilotPrograms'
+// import { AppPilotPrograms } from '../../components/our-works/AppPilotPrograms'
 import { AppProjects } from '../../components/our-works/AppProjects'
 import { AppRealizedProjects } from '../../components/our-works/AppRealizedProjects'
-import { AppWorkShops } from '../../components/our-works/AppWorkShops'
+// import { AppWorkShops } from '../../components/our-works/AppWorkShops'
 
 export default {
     components: {
-        AppPilotPrograms,
+        // AppPilotPrograms,
         AppProjects,
         AppRealizedProjects,
-        AppWorkShops,
+        // AppWorkShops,
     },
     data() {
         return {
