@@ -1,7 +1,7 @@
 <template>
     <div class="row gallery p-4">
         <div class="gallery__title col-12">
-            <h4>{{ selectedCategory }}</h4>
+            <h4>{{ selectedCategoryTitle }}</h4>
         </div>
         <div
             v-for="(item, index) in allCategoryData"
@@ -26,6 +26,7 @@ export default {
     data() {
         return {
             selectedCategory: '',
+            selectedCategoryTitle: '',
             allCategoryData: [],
         }
     },
@@ -55,16 +56,16 @@ export default {
         generateCatTitle() {
             switch (this.selectedCategory) {
                 case 'pilot-projects':
-                    this.selectedCategory = 'პილოტ პროგრამები'
+                    this.selectedCategoryTitle = 'პილოტ პროგრამები'
                     break
                 case 'projects':
-                    this.selectedCategory = 'პროექტებები'
+                    this.selectedCategoryTitle = 'პროექტებები'
                     break
                 case 'realized-projects':
-                    this.selectedCategory = 'განხორციელებული პროექტები'
+                    this.selectedCategoryTitle = 'განხორციელებული პროექტები'
                     break
                 case 'work-shops':
-                    this.selectedCategory = 'ვორქშოპები'
+                    this.selectedCategoryTitle = 'ვორქშოპები'
                     break
             }
         },
