@@ -18,7 +18,7 @@
                 ამ მონაცემებით პოსტი ვერ მოიძებნა ;(
             </p>
             <div class="mt-4">
-                <b-button variant="warning" @click="showAllData"
+                <b-button variant="primary" @click="showAllData"
                     >მაჩვენე ყველა</b-button
                 >
             </div>
@@ -51,6 +51,15 @@
                                 @click="deletePost(item._id, index)"
                             >
                                 <p>წაშლა</p>
+                            </b-button>
+                        </div>
+                        <div class="w-100 d-flex justify-content-center mt-3">
+                            <b-button
+                                variant="warning"
+                                class="d-flex justify-content-between align-items-center"
+                                @click="upadatePost(item._id)"
+                            >
+                                <p>რედაქტირება</p>
                             </b-button>
                         </div>
                     </div>
@@ -87,6 +96,53 @@
                 </div>
             </div>
         </div>
+        <b-modal
+            id="modal"
+            ref="modal"
+            size="xl"
+            hide-footer
+            :title="'რედაქტირება'"
+        >
+            <div
+                v-for="(item, index) in selectedPost"
+                :key="index"
+                class="group p-4 d-flex justify-content-center row"
+            >
+                <div class="group__input col-lg-12 mt-4">
+                    <div class>
+                        <h4>სათაური</h4>
+                    </div>
+                    <b-form-input
+                        v-model="title"
+                        :placeholder="item.title"
+                    ></b-form-input>
+                </div>
+                <div class="group__input col-lg-12 mt-4">
+                    <div class>
+                        <h4>აღწერა</h4>
+                    </div>
+
+                    <b-form-textarea
+                        id="textarea-rows"
+                        v-model="description"
+                        :placeholder="item.description"
+                        rows="8"
+                    ></b-form-textarea>
+                </div>
+
+                <!-- <div
+                            class="group__input col-lg-12 d-flex justify-content-center mt-4"
+                        >
+                            <b-button
+                                v-if="!isLoading"
+                                variant="success"
+                                @click="onSubmit"
+                                >დამატება</b-button
+                            >
+                            <AppSpinner v-if="isLoading"></AppSpinner>
+                        </div> -->
+            </div>
+        </b-modal>
     </div>
 </template>
 
@@ -103,6 +159,9 @@ export default {
             searchText: '',
             isFound: false,
             isFiltered: false,
+            title: '',
+            description: '',
+            selectedPost: [],
         }
     },
     created: function () {
@@ -174,6 +233,19 @@ export default {
                 .catch((err) => {
                     console.log(err)
                 })
+        },
+        upadatePost(id) {
+            // Get selected post
+            console.log(id)
+            this.allDataList.map((item) => {
+                if (item._id === id) {
+                    const index = this.allDataList.indexOf(item)
+                    console.log(index)
+                    this.selectedPost = [this.allDataList[index]]
+                }
+            })
+
+            this.$refs['modal'].show()
         },
     },
 }
