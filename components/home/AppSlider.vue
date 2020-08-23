@@ -8,7 +8,7 @@
         </div>
         <div class="slider__text col-md-6">
             <div class="slider__text__title col-12">
-                <h4>პროექტები</h4>
+                <h4 @click="changeRoute()">პროექტები</h4>
             </div>
             <div class="slider__text__text col-12 mt-4">
                 <p>
@@ -145,6 +145,9 @@ export default {
                 console.log('not enought length')
             }
         },
+        changeRoute() {
+            this.$router.push('/our-works/projects/')
+        },
     },
 }
 </script>
@@ -167,6 +170,7 @@ export default {
             h4 {
                 color: #413f3f;
                 font-size: 36px;
+                cursor: pointer;
             }
         }
 

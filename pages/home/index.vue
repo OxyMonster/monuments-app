@@ -27,7 +27,9 @@
         </div>
         <div class="home__text col-md-6">
             <div class="home__text__title">
-                <h4>განხორციელებული პროექტები</h4>
+                <h4 @click="changeRoute('projects')">
+                    განხორციელებული პროექტები
+                </h4>
             </div>
             <div class="home__text__tex mt-4">
                 <p style="text-align: left;">
@@ -50,7 +52,7 @@
         </div>
         <div class="home__text col-md-6">
             <div class="home__text__title">
-                <h4>პუბლიკაციები</h4>
+                <h4 @click="changeRoute('publications')">პუბლიკაციები</h4>
             </div>
             <div class="home__text__text mt-4">
                 <p>
@@ -85,6 +87,18 @@ export default {
     components: {
         AppSlider,
     },
+    data() {
+        return {}
+    },
+    methods: {
+        changeRoute(name) {
+            if (name === 'projects') {
+                this.$router.push('/our-works/realized-projects')
+            } else {
+                this.$router.push('/publications')
+            }
+        },
+    },
 }
 </script>
 
@@ -110,6 +124,11 @@ export default {
             h4 {
                 font-size: 31px;
                 color: #413f3f;
+                cursor: pointer;
+                &:hover {
+                    transition: 0.4s;
+                    // border-bottom: 1px solid #413f3f;
+                }
             }
         }
 
