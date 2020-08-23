@@ -31,6 +31,7 @@ export default {
     },
     created() {
         this.getSelectedCatData()
+        this.generateCatTitle()
     },
     methods: {
         getSelectedCatData() {
@@ -49,6 +50,23 @@ export default {
 
         routeToDetails(id) {
             this.$router.push(`/our-works/${this.selectedCategory}/${id}`)
+        },
+
+        generateCatTitle() {
+            switch (this.selectedCategory) {
+                case 'pilot-projects':
+                    this.selectedCategory = 'პილოტ პროგრამები'
+                    break
+                case 'projects':
+                    this.selectedCategory = 'პროექტებები'
+                    break
+                case 'realized-projects':
+                    this.selectedCategory = 'განხორციელებული პროექტები'
+                    break
+                case 'work-shops':
+                    this.selectedCategory = 'ვორქშოპები'
+                    break
+            }
         },
     },
 }

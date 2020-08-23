@@ -1,12 +1,12 @@
 <template>
-    <div class="details pb-5">
+    <div class="details pb-5 h-100">
         <div class="details__title">
             <!-- <h4>{{ selectedPostURL[2] }}</h4> -->
         </div>
         <div
             v-for="item in allDataList"
             :key="item._id"
-            class="details__container col-12 mt-4"
+            class="details__container col-12 mt-4 h-100"
         >
             <div class="details__container__title col-12 pb-4">
                 <h4>{{ item.title }}</h4>
@@ -22,9 +22,24 @@
                     />
                 </div>
             </div>
-            <!-- <div class="details__container__text col-lg-7"> -->
-            <p>{{ item.description }}</p>
-            <!-- </div> -->
+            <div
+                v-if="item.file[1]"
+                class="details__container__img col-lg-5 p-3"
+                style="float: right;"
+            >
+                <div
+                    lazy-background="~/assets/img/placeholder.png"
+                    class="details__container__img__container"
+                >
+                    <img
+                        :src="'http://94.237.98.180:8081/' + item.file[1].path"
+                        alt="slider_img"
+                    />
+                </div>
+            </div>
+            <div class="details__container__text col p-0">
+                <p>{{ item.description }}</p>
+            </div>
         </div>
     </div>
 </template>
@@ -83,6 +98,7 @@ export default {
             height: 346px;
             float: left;
             clear: left;
+            z-index: 2;
 
             &__container {
                 height: 100%;
@@ -96,13 +112,18 @@ export default {
             }
         }
 
-        // &__text {
-        p {
-            color: #808080;
-            font-size: 16px;
-            text-align: left;
+        &__text {
+            // padding-bottom: 200px;
+            min-height: 100vh;
+            // background-color: white;
+            // color: white;
+            p {
+                color: #808080;
+                font-size: 16px;
+                text-align: left;
+                z-index: 2;
+            }
         }
-        // }
     }
 }
 </style>
