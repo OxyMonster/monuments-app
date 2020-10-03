@@ -84,6 +84,13 @@
     "_name": "_06930dad"
   },
   {
+    "name": "publications-id",
+    "path": "/publications/:id",
+    "component": "/Users/giorgizeikidze/projects/monuments-app/pages/publications/_id/index.vue",
+    "chunkName": "pages/publications/_id/index",
+    "_name": "_d86dc5b2"
+  },
+  {
     "name": "our-works-id-:id",
     "path": "/our-works/:id?/:id",
     "component": "/Users/giorgizeikidze/projects/monuments-app/pages/our-works/_id/:id.vue",

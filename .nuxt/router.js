@@ -15,6 +15,7 @@ const _76545fe2 = () => interopDefault(import('../pages/admin/add/index.vue' /* 
 const _552f3be0 = () => interopDefault(import('../pages/admin/delete/index.vue' /* webpackChunkName: "pages/admin/delete/index" */))
 const _011ab648 = () => interopDefault(import('../pages/admin/delete/_id.vue' /* webpackChunkName: "pages/admin/delete/_id" */))
 const _06930dad = () => interopDefault(import('../pages/our-works/_id/index.vue' /* webpackChunkName: "pages/our-works/_id/index" */))
+const _d86dc5b2 = () => interopDefault(import('../pages/publications/_id/index.vue' /* webpackChunkName: "pages/publications/_id/index" */))
 const _b8a7f220 = () => interopDefault(import('../pages/our-works/_id/:id.vue' /* webpackChunkName: "pages/our-works/_id/:id" */))
 const _240ffe10 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -82,6 +83,10 @@ export const routerOptions = {
     path: "/our-works/:id?",
     component: _06930dad,
     name: "our-works-id"
+  }, {
+    path: "/publications/:id",
+    component: _d86dc5b2,
+    name: "publications-id"
   }, {
     path: "/our-works/:id?/:id",
     component: _b8a7f220,

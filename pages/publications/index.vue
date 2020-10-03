@@ -9,7 +9,10 @@
                 :key="item._id"
                 class="pub__box col-md-2 col-md-offset-1"
             >
-                <div class="pub__box__img mt-4">
+                <div
+                    class="pub__box__img mt-4"
+                    @click="routeToDetails(item._id)"
+                >
                     <div class="pub__box__img__container">
                         <img
                             :src="
@@ -54,6 +57,10 @@ export default {
                     console.log(err)
                 })
         },
+
+        routeToDetails(id) {
+            this.$router.push(`/publications/${id}`)
+        },
     },
 }
 </script>
@@ -72,6 +79,7 @@ export default {
     }
     &__box {
         &__img {
+            cursor: pointer;
             &__container {
                 width: 100%;
                 height: 329.32px;
@@ -82,9 +90,9 @@ export default {
                     border-radius: 8px;
                     &:hover {
                         // filter: none;
-                        -webkit-filter: grayscale(0%);
-                        filter: grayscale(100%);
-                        transition: 0.4s;
+                        -webkit-filter: blur(4px);
+                        filter: blur(4px);
+                        transition: 0.5s;
                     }
                 }
                 span {
